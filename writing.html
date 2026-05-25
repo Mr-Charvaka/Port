@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aman Bhardwaj | Writing</title>
+    <meta name="description" content="Essays and technical writing on systems programming, networking, compilers, and low-level engineering by Aman Bhardwaj." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Geist:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "charcoal-ink": "#1A1816",
+                        "primary-container": "#1d1b19",
+                        "surface": "#fdf9f2",
+                        "surface-container-highest": "#e6e2db",
+                        "secondary-container": "#ff996f",
+                        "surface-container-high": "#ece8e1",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf9f2",
+                        "on-surface-variant": "#4b4640",
+                        "secondary-fixed-dim": "#ffb598",
+                        "tertiary-fixed-dim": "#ccc5bd",
+                        "on-tertiary-fixed": "#1e1b16",
+                        "on-primary-fixed-variant": "#494644",
+                        "on-primary-fixed": "#1d1b19",
+                        "inverse-on-surface": "#f4f0e9",
+                        "warm-slate": "#706B64",
+                        "error-container": "#ffdad6",
+                        "bone-white": "#F5F1EA",
+                        "on-primary-container": "#878380",
+                        "primary-fixed-dim": "#cbc5c2",
+                        "primary-fixed": "#e7e1de",
+                        "surface-container": "#f1ede6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#1e1b16",
+                        "on-tertiary-fixed-variant": "#4a4640",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#cbc5c2",
+                        "secondary-fixed": "#ffdbce",
+                        "outline-variant": "#cec5bd",
+                        "surface-container-low": "#f7f3ec",
+                        "on-tertiary-container": "#89837c",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-fixed-variant": "#78310f",
+                        "outline": "#7d766f",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "surface-tint": "#615e5b",
+                        "on-error-container": "#93000a",
+                        "copper-accent": "#B35D38",
+                        "on-background": "#1c1c18",
+                        "on-secondary": "#ffffff",
+                        "background": "#fdf9f2",
+                        "surface-dim": "#dddad3",
+                        "on-secondary-container": "#772f0d",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e9e1d9",
+                        "on-secondary-fixed": "#370e00",
+                        "inverse-surface": "#31302c",
+                        "secondary": "#974724",
+                        "tertiary": "#000000"
+                    },
+                    "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                    "spacing": {
+                        "section-gap": "160px", "stack-sm": "8px", "container-max": "1280px",
+                        "stack-lg": "48px", "margin-mobile": "24px", "stack-md": "24px",
+                        "margin-desktop": "80px", "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["geist"], "display-xl": ["ebGaramond"], "mono-ui": ["geist"],
+                        "body-lg": ["geist"], "headline-lg": ["ebGaramond"], "body-md": ["geist"],
+                        "headline-md": ["ebGaramond"], "headline-lg-mobile": ["ebGaramond"], "display-xl-mobile": ["ebGaramond"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-xl": ["80px", { "lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "mono-ui": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "display-xl-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .geist { font-family: 'Geist', sans-serif; }
+        .ebGaramond { font-family: 'EB Garamond', serif; }
+
+        /* Article drawer */
+        #article-drawer {
+            transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+        #article-drawer-backdrop {
+            transition: opacity 0.35s ease;
+        }
+
+        /* Tag filter active */
+        .tag-btn.active {
+            background: #000000;
+            color: #ffffff;
+            border-color: #000000;
+        }
+
+        /* Article card hover */
+        .article-card {
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .article-card:hover {
+            background: rgba(179, 93, 56, 0.04);
+        }
+
+        /* Article body prose */
+        .article-prose h2 { font-family: 'EB Garamond', serif; font-size: 1.6rem; font-weight: 700; margin: 2rem 0 0.75rem; line-height: 1.2; }
+        .article-prose h3 { font-family: 'Geist', sans-serif; font-size: 1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .article-prose p { margin-bottom: 1.25rem; line-height: 1.8; color: #706B64; font-size: 0.95rem; }
+        .article-prose code { font-family: 'Geist', monospace; font-size: 0.8rem; background: rgba(112,107,100,0.1); padding: 0.15em 0.4em; border-radius: 3px; }
+        .article-prose pre { background: #1A1816; color: #fdf9f2; padding: 1.25rem; border-radius: 4px; overflow-x: auto; margin: 1.25rem 0; font-size: 0.8rem; line-height: 1.7; }
+        .article-prose pre code { background: none; padding: 0; color: inherit; }
+        .article-prose blockquote { border-left: 2px solid #B35D38; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #706B64; }
+        .article-prose ul { list-style: none; margin-bottom: 1.25rem; }
+        .article-prose ul li::before { content: "→ "; color: #B35D38; font-weight: 700; }
+        .article-prose ul li { margin-bottom: 0.4rem; color: #706B64; font-size: 0.95rem; line-height: 1.7; }
+
+        /* Article hidden by filter */
+        .article-card[data-hidden="true"] {
+            display: none;
+        }
+
+        /* Progress bar */
+        #reading-progress {
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.1s linear;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-primary font-body-md selection:bg-charcoal-ink selection:text-surface">
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-charcoal-ink/90 backdrop-blur-md border-b border-warm-slate/10 transition-all duration-500 ease-in-out">
+        <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-3">
+                <img alt="Aman Bhardwaj" class="w-8 h-8 rounded-full object-cover" src="aman_bhardwaj_portrait.png" />
+                <a href="index.html" class="flex items-baseline gap-2">
+                    <span class="font-body-md font-medium text-primary dark:text-on-primary">Aman Bhardwaj</span>
+                    <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">SOFTWARE ENGINEER</span>
+                </a>
+            </div>
+            <div class="hidden lg:flex items-center gap-8">
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="index.html">Home</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="work.html">Work</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="lab.html">Lab</a>
+                <a class="font-body-md text-primary dark:text-on-primary border-b border-copper-accent pb-1" href="#">Writing</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="life.html">Life</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="contact.html">Contact</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-6">
+                <span id="realtime-clock" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">DEHRADUN · IST</span>
+                <a class="font-body-md text-primary dark:text-on-primary border border-primary dark:border-on-primary px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-colors flex items-center gap-2" href="contact.html">
+                    Get in touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+            <button class="lg:hidden text-primary hover:opacity-70 transition-opacity duration-300">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-[96px] pb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <!-- Writing Header -->
+        <div class="flex items-center gap-4 mb-8">
+            <span class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold">Writing</span>
+            <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">All Articles</span>
+        </div>
+
+        <h1 class="font-display-xl-mobile text-[48px] md:font-display-xl md:text-[80px] leading-[0.95] text-primary dark:text-on-primary tracking-tight mb-8 max-w-5xl">
+            Writing
+        </h1>
+        <p class="font-body-lg text-warm-slate dark:text-warm-slate/90 text-lg md:text-xl leading-relaxed mb-12 max-w-3xl">
+            I write to document what I have designed, engineered, or broken while exploring low-level operating system architectures, networking, and compiler systems.
+        </p>
+
+        <!-- Tag Filters -->
+        <div id="tag-filter-bar" class="flex flex-wrap gap-2 mb-16">
+            <button class="tag-btn active" data-tag="all" onclick="filterArticles('all')">All</button>
+            <button class="tag-btn" data-tag="Systems" onclick="filterArticles('Systems')">Systems</button>
+            <button class="tag-btn" data-tag="Networking" onclick="filterArticles('Networking')">Networking</button>
+            <button class="tag-btn" data-tag="Compiler Design" onclick="filterArticles('Compiler Design')">Compilers</button>
+            <button class="tag-btn" data-tag="Operating Systems" onclick="filterArticles('Operating Systems')">OS</button>
+            <button class="tag-btn" data-tag="Rust" onclick="filterArticles('Rust')">Rust</button>
+            <button class="tag-btn" data-tag="C" onclick="filterArticles('C')">C / ASM</button>
+        </div>
+
+        <!-- No results -->
+        <div id="no-articles-msg" class="hidden py-16 text-center">
+            <span class="material-symbols-outlined text-[40px] text-warm-slate/30">search_off</span>
+            <p class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-wider mt-3">No articles match this tag</p>
+        </div>
+
+        <!-- Articles List -->
+        <div id="articles-list" class="border-t border-warm-slate/15 dark:border-warm-slate/25">
+
+            <!-- Article 1 -->
+            <div class="article-card border-b border-warm-slate/15 dark:border-warm-slate/25 py-10 group flex justify-between items-start gap-8 px-2 -mx-2 rounded"
+                 data-tags='["Systems","C","Operating Systems"]'
+                 onclick="openArticle('memory-allocator')">
+                <div class="flex-1">
+                    <span class="font-mono-ui text-[9px] text-warm-slate/80 dark:text-warm-slate/50 uppercase tracking-widest block mb-4">Systems Programming · Feb 2025 · 5 Min Read</span>
+                    <h2 class="font-headline-md text-2xl md:text-3xl font-bold text-primary dark:text-on-primary mb-3 group-hover:text-copper-accent transition-colors duration-300">
+                        Writing a Custom Memory Allocator in C: Lessons from Retro-OS
+                    </h2>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6 max-w-4xl">
+                        A deep dive into writing a custom heap memory allocator for an x86 kernel. Exploring block splits, free list traversals, memory alignments, and avoiding kernel-level fragmentation.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">C</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Systems Programming</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Operating Systems</span>
+                    </div>
+                </div>
+                <div class="text-warm-slate group-hover:text-copper-accent group-hover:translate-x-1 transition-all duration-300 self-center shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="article-card border-b border-warm-slate/15 dark:border-warm-slate/25 py-10 group flex justify-between items-start gap-8 px-2 -mx-2 rounded"
+                 data-tags='["Networking","Rust"]'
+                 onclick="openArticle('tunneling-relay')">
+                <div class="flex-1">
+                    <span class="font-mono-ui text-[9px] text-warm-slate/80 dark:text-warm-slate/50 uppercase tracking-widest block mb-4">Networking · Jan 2025 · 4 Min Read</span>
+                    <h2 class="font-headline-md text-2xl md:text-3xl font-bold text-primary dark:text-on-primary mb-3 group-hover:text-copper-accent transition-colors duration-300">
+                        How to Build a High-Performance Tunneling Relay in Rust
+                    </h2>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6 max-w-4xl">
+                        Exploring asynchronous stream multiplexing with Rust's Tokio runtime. Learn how to write secure, low-latency relay servers capable of forwarding TCP/HTTP traffic with deep header inspection logs.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Rust</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Tokio</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Networking</span>
+                    </div>
+                </div>
+                <div class="text-warm-slate group-hover:text-copper-accent group-hover:translate-x-1 transition-all duration-300 self-center shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="article-card border-b border-warm-slate/15 dark:border-warm-slate/25 py-10 group flex justify-between items-start gap-8 px-2 -mx-2 rounded"
+                 data-tags='["Compiler Design","Systems"]'
+                 onclick="openArticle('visual-programming')">
+                <div class="flex-1">
+                    <span class="font-mono-ui text-[9px] text-warm-slate/80 dark:text-warm-slate/50 uppercase tracking-widest block mb-4">Compiler Design · Nov 2024 · 4 Min Read</span>
+                    <h2 class="font-headline-md text-2xl md:text-3xl font-bold text-primary dark:text-on-primary mb-3 group-hover:text-copper-accent transition-colors duration-300">
+                        Visual Programming: Translating User Workflows into Deployable Stacks
+                    </h2>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6 max-w-4xl">
+                        An exploration of abstract syntax trees (ASTs) and translation compilers. Learn how to map visual node structures directly to functional full-stack Express and React architectures.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Compiler Design</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Full-Stack</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">No-Code</span>
+                    </div>
+                </div>
+                <div class="text-warm-slate group-hover:text-copper-accent group-hover:translate-x-1 transition-all duration-300 self-center shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="article-card border-b border-warm-slate/15 dark:border-warm-slate/25 py-10 group flex justify-between items-start gap-8 px-2 -mx-2 rounded"
+                 data-tags='["Rust","Systems","Operating Systems"]'
+                 onclick="openArticle('browser-layout')">
+                <div class="flex-1">
+                    <span class="font-mono-ui text-[9px] text-warm-slate/80 dark:text-warm-slate/50 uppercase tracking-widest block mb-4">Rendering Systems · Mar 2025 · 6 Min Read</span>
+                    <h2 class="font-headline-md text-2xl md:text-3xl font-bold text-primary dark:text-on-primary mb-3 group-hover:text-copper-accent transition-colors duration-300">
+                        How Browser Layout Engines Actually Work: Building Kite from Scratch
+                    </h2>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6 max-w-4xl">
+                        Walking through how I built a custom HTML/CSS tokenizer and layout engine in Rust. Covers the DOM tree, box model computation, inline flow, block layout, and paint ordering.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Rust</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Rendering</span>
+                        <span class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/80 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Systems</span>
+                    </div>
+                </div>
+                <div class="text-warm-slate group-hover:text-copper-accent group-hover:translate-x-1 transition-all duration-300 self-center shrink-0">
+                    <span class="material-symbols-outlined text-[24px]">arrow_forward</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-20 bg-surface dark:bg-charcoal-ink border-t border-warm-slate/10">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 text-left">
+                <div class="md:col-span-6 flex flex-col gap-3">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase">© 2026 Aman Bhardwaj</span>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/80 leading-relaxed max-w-sm">Built in Dehradun. Systems, backend, and low-level code.</p>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Work</span>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Project Syndicate</a>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">D-RAP</a>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Flow</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Writing</span>
+                    <a href="#" onclick="filterArticles('Systems')" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Systems</a>
+                    <a href="#" onclick="filterArticles('Networking')" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Networking</a>
+                    <a href="#" onclick="filterArticles('Compiler Design')" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Compilers</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">More</span>
+                    <a href="https://www.linkedin.com/in/aman-bhardwaj" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">LinkedIn</a>
+                    <a href="https://github.com/Mr-Charvaka" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">GitHub</a>
+                    <a href="mailto:aman71204@hotmail.com" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== ARTICLE READER DRAWER ====== -->
+    <!-- Backdrop -->
+    <div id="article-drawer-backdrop" class="fixed inset-0 bg-charcoal-ink/40 backdrop-blur-sm opacity-0 pointer-events-none z-50"
+         onclick="closeArticle()"></div>
+
+    <!-- Reading progress bar -->
+    <div class="fixed top-0 left-0 right-0 z-[70] h-0.5 bg-warm-slate/10 pointer-events-none">
+        <div id="reading-progress" class="h-full bg-copper-accent w-full"></div>
+    </div>
+
+    <!-- Drawer Panel -->
+    <div id="article-drawer"
+         class="fixed top-0 right-0 h-full w-full md:w-[720px] lg:w-[800px] bg-surface dark:bg-charcoal-ink shadow-2xl z-[60] translate-x-full flex flex-col">
+
+        <!-- Drawer Header -->
+        <div class="flex items-center justify-between px-6 md:px-10 py-5 border-b border-warm-slate/10 dark:border-warm-slate/20 flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <span id="article-category-label" class="font-mono-ui text-[10px] text-copper-accent uppercase tracking-widest font-semibold">Systems</span>
+                <span class="text-warm-slate/30">·</span>
+                <span id="article-read-time" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">5 Min Read</span>
+            </div>
+            <button onclick="closeArticle()" class="flex items-center gap-1.5 px-3 py-1.5 border border-warm-slate/20 rounded text-warm-slate hover:text-primary hover:border-primary transition-all font-mono-ui text-[10px] uppercase tracking-wider">
+                <span class="material-symbols-outlined text-[14px]">close</span> Close
+            </button>
+        </div>
+
+        <!-- Drawer Body -->
+        <div id="article-scroll-body" class="flex-1 overflow-y-auto px-6 md:px-16 py-10" onscroll="updateReadingProgress()">
+            <h1 id="article-title" class="font-headline-lg text-3xl md:text-[44px] leading-[1.1] text-primary dark:text-on-primary tracking-tight mb-6 max-w-2xl"></h1>
+            <p id="article-date" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest mb-10"></p>
+            <div id="article-body" class="article-prose max-w-2xl"></div>
+            <!-- Back button at bottom -->
+            <div class="mt-16 pt-8 border-t border-warm-slate/10 dark:border-warm-slate/20 flex items-center gap-4">
+                <button onclick="closeArticle()" class="font-mono-ui text-[10px] uppercase tracking-widest text-warm-slate hover:text-copper-accent transition-colors flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px]">arrow_back</span> Back to all articles
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Tag filter button base styles */
+        .tag-btn {
+            border: 1px solid rgba(112,107,100,0.3);
+            background: #fbf9f2;
+            color: #706B64;
+            font-size: 10px;
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 7px 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 2px;
+        }
+        .tag-btn:hover:not(.active) {
+            border-color: #000;
+            color: #000;
+        }
+    </style>
+
+    <script>
+        // ---- ARTICLE DATA ----
+        const ARTICLES = {
+            'memory-allocator': {
+                title: 'Writing a Custom Memory Allocator in C: Lessons from Retro-OS',
+                category: 'Systems Programming',
+                date: 'February 2025',
+                readTime: '5 Min Read',
+                body: `
+                    <p>When I started working on <strong>Retro-OS</strong>, I quickly realized the standard library wasn't available — no malloc, no free, no stdlib. I had to write every memory management primitive from scratch.</p>
+
+                    <h2>The Problem with Kernel Memory</h2>
+                    <p>At the kernel level, you're working directly with physical RAM. There's no operating system beneath you to ask for memory — you <em>are</em> the operating system. My first task was to write a simple heap allocator that could manage memory regions above the kernel code.</p>
+
+                    <blockquote>The heap starts where the kernel ends. That's it. No libc magic, no sbrk, no mmap. Just a base address and a boundary.</blockquote>
+
+                    <h2>Block Header Layout</h2>
+                    <p>Every allocated block needs a header describing its size and whether it's free. I used a compact 16-byte aligned struct:</p>
+                    <pre><code>typedef struct block_header {
+    size_t size;       // size of this block (excluding header)
+    uint8_t is_free;   // 1 = free, 0 = allocated
+    struct block_header *next; // pointer to next block
+} block_header_t;</code></pre>
+
+                    <p>This forms a linked list of contiguous memory blocks. Each allocation walks the list looking for a free block large enough to satisfy the request.</p>
+
+                    <h2>The First-Fit Algorithm</h2>
+                    <p>My initial implementation used a <strong>first-fit strategy</strong> — iterate the free list and return the first block that's large enough. Simple, predictable, but prone to fragmentation over time.</p>
+                    <ul>
+                        <li>Walk the linked list from the base pointer</li>
+                        <li>If a block is free and size >= requested, split it and return</li>
+                        <li>If no block fits, extend the heap boundary</li>
+                        <li>On free(), mark is_free = 1 and coalesce adjacent free blocks</li>
+                    </ul>
+
+                    <h2>Coalescing: The Hard Part</h2>
+                    <p>The trickiest part was <strong>free block coalescing</strong> — merging adjacent free blocks into a larger one to fight fragmentation. After each free(), I traverse the list and merge contiguous free blocks into single larger blocks.</p>
+
+                    <pre><code>void kfree(void *ptr) {
+    block_header_t *block = (block_header_t*)ptr - 1;
+    block->is_free = 1;
+    // Coalesce forward
+    while (block->next && block->next->is_free) {
+        block->size += sizeof(block_header_t) + block->next->size;
+        block->next = block->next->next;
+    }
+}</code></pre>
+
+                    <h2>Alignment Matters</h2>
+                    <p>One subtle issue I hit was alignment faults. x86 doesn't strictly require alignment for most loads, but SSE instructions do. I added 16-byte alignment by rounding up all allocation sizes:</p>
+                    <pre><code>#define ALIGN16(x) (((x) + 15) & ~15)</code></pre>
+
+                    <h2>What I Learned</h2>
+                    <p>Writing your own allocator teaches you something no textbook can: memory is not magic. It's physical bytes at physical addresses, and everything about "managing" it is just bookkeeping on top of that reality. The complexity of modern allocators like jemalloc or tcmalloc is earned, not arbitrary.</p>
+                `
+            },
+            'tunneling-relay': {
+                title: 'How to Build a High-Performance Tunneling Relay in Rust',
+                category: 'Networking',
+                date: 'January 2025',
+                readTime: '4 Min Read',
+                body: `
+                    <p>Project D-RAP started as a question: can I expose a local service to the internet without port forwarding, using a self-hosted relay? The answer is yes, and Rust's async ecosystem makes it surprisingly clean.</p>
+
+                    <h2>The Architecture</h2>
+                    <p>A tunneling relay has two sides: a <strong>client agent</strong> running locally (next to your service) and a <strong>relay server</strong> in the cloud. The client opens a persistent connection to the relay, and the relay accepts public connections and forwards them through that persistent tunnel.</p>
+
+                    <blockquote>Every byte from a public visitor goes: internet → relay server → tunnel → local client → local service. The relay is purely a forwarding middleman.</blockquote>
+
+                    <h2>Tokio + Stream Multiplexing</h2>
+                    <p>The core of D-RAP uses <code>tokio::io::copy_bidirectional</code> to forward streams, with a custom multiplexing protocol layered on top. Each logical connection gets a session ID, so multiple TCP streams can share a single physical tunnel connection.</p>
+
+                    <pre><code>async fn handle_tunnel(
+    tunnel: TcpStream,
+    sessions: Arc&lt;SessionMap&gt;
+) {
+    let (mut read, mut write) = tunnel.into_split();
+    loop {
+        let header = read_frame_header(&mut read).await?;
+        let session = sessions.get(header.session_id)?;
+        tokio::io::copy(&mut read, &mut session.write).await?;
+    }
+}</code></pre>
+
+                    <h2>Frame Protocol</h2>
+                    <p>Each frame has a simple 8-byte header: 4 bytes session ID, 4 bytes payload length. This keeps overhead minimal while enabling multiplexing over a single TCP connection.</p>
+                    <ul>
+                        <li>Session 0 is reserved for control messages (new connection, close)</li>
+                        <li>Sessions 1-65535 are data sessions</li>
+                        <li>The relay allocates session IDs; the client echoes them back</li>
+                    </ul>
+
+                    <h2>Performance Results</h2>
+                    <p>On a 1 Gbps relay node, D-RAP sustained ~600 Mbps throughput with &lt;1ms added latency. The bottleneck was kernel TCP buffer tuning, not Rust overhead. Rust's zero-cost abstractions genuinely shine here — no GC pauses, no memory allocation in the hot path.</p>
+
+                    <h2>What's Next</h2>
+                    <p>The next phase is adding TLS termination at the relay, proper authentication tokens, and a Go-based dashboard with per-session bandwidth graphs. The infrastructure is solid; the polish is what remains.</p>
+                `
+            },
+            'visual-programming': {
+                title: 'Visual Programming: Translating User Workflows into Deployable Stacks',
+                category: 'Compiler Design',
+                date: 'November 2024',
+                readTime: '4 Min Read',
+                body: `
+                    <p><strong>Project Flow</strong> started from a simple observation: most no-code tools generate glue code that doesn't scale. I wanted to build something that takes a visual workflow and compiles it into a real, deployable full-stack application.</p>
+
+                    <h2>The Compiler Pipeline</h2>
+                    <p>Flow works in four stages, much like a traditional compiler:</p>
+                    <ul>
+                        <li><strong>Frontend</strong>: A React-based node editor. Users drag blocks (API routes, database queries, UI components) and connect them with edges.</li>
+                        <li><strong>AST Construction</strong>: The graph is serialized into a JSON AST — nodes become AST nodes, edges become dependency edges.</li>
+                        <li><strong>Semantic Analysis</strong>: We validate that connections are type-compatible (e.g., a database query output matches the expected API response shape).</li>
+                        <li><strong>Code Generation</strong>: The AST walks the graph and emits Express routes, React components, and Prisma schema files.</li>
+                    </ul>
+
+                    <h2>The Node Schema</h2>
+                    <p>Every node in the graph has a type, input ports, and output ports:</p>
+                    <pre><code>{
+  "id": "api-route-1",
+  "type": "http.get",
+  "config": { "path": "/users/:id" },
+  "inputs": [],
+  "outputs": [{ "port": "request", "type": "HttpRequest" }]
+}</code></pre>
+
+                    <h2>Code Generation Strategy</h2>
+                    <p>Rather than templating, I built a structured emitter using a custom IR. Each node type has an associated emitter class that knows how to generate code given its resolved inputs. This keeps the generated code clean and idiomatic — not a mess of injected template strings.</p>
+
+                    <blockquote>The goal was generated code that a developer would be proud to have written themselves, not code that screams "this was auto-generated."</blockquote>
+
+                    <h2>The Hard Part: Cycles</h2>
+                    <p>Graph cycles are the hardest edge case. A pure cycle (A depends on B, B depends on A) is a semantic error. But many real-world patterns need feedback loops (a component that queries itself on mount). Detecting and distinguishing these required a proper topological sort with cycle detection using DFS and coloring.</p>
+                `
+            },
+            'browser-layout': {
+                title: 'How Browser Layout Engines Actually Work: Building Kite from Scratch',
+                category: 'Rendering Systems',
+                date: 'March 2025',
+                readTime: '6 Min Read',
+                body: `
+                    <p>After reading through the Webkit and Servo source trees, I became obsessed with one question: how does a browser take a string of HTML and CSS and produce pixels on screen? The only way to truly understand it was to build one — so I started <strong>Project Kite</strong>.</p>
+
+                    <h2>Stage 1: Tokenization</h2>
+                    <p>HTML is not a regular grammar. The tokenizer is a state machine with 80+ states. My Rust implementation handles the main cases: tags, attributes, CDATA, doctype, comments, and character references. Each state transition emits a token.</p>
+                    <pre><code>enum TokenizerState {
+    Data,
+    TagOpen,
+    TagName,
+    BeforeAttrName,
+    AttrName,
+    AttrValue(QuoteType),
+    // ... 70+ more states
+}</code></pre>
+
+                    <h2>Stage 2: DOM Tree Construction</h2>
+                    <p>Tokens feed into a tree builder that maintains an open element stack (the "stack of open elements" in the HTML spec). Each token pops or pushes elements according to foster parenting rules, adoption agency, and implied end tags.</p>
+
+                    <h2>Stage 3: Style Resolution</h2>
+                    <p>The CSS cascade is the most intellectually satisfying part. For each element, we collect all matching rules, sort by specificity and order, and compute a final computed value for each property. Inheritance walks up the DOM tree for inheritable properties.</p>
+                    <ul>
+                        <li>Specificity: inline > ID > class > element</li>
+                        <li>Cascade layers: author > user > user-agent</li>
+                        <li>Computed values: resolve relative units (em, %) to absolute px</li>
+                    </ul>
+
+                    <h2>Stage 4: Layout</h2>
+                    <p>Layout computes each box's position and dimensions. Kite currently implements the <strong>block formatting context</strong> and <strong>inline formatting context</strong>. Block layout is straightforward — boxes stack vertically. Inline layout is a line-breaking algorithm that packs inline boxes into line boxes, handling wrapping and baseline alignment.</p>
+
+                    <blockquote>Every flex container, grid cell, or positioned element creates a new formatting context. Layout is recursive and beautiful.</blockquote>
+
+                    <h2>Stage 5: Paint</h2>
+                    <p>Paint traverses the layout tree in paint order (backgrounds first, then borders, then content, then outlines) and records paint operations into a display list. Kite currently outputs to an HTML5 Canvas element for verification — a real GPU backend is next.</p>
+                `
+            }
+        };
+
+        // ---- TAG FILTER ----
+        let activeTag = 'all';
+
+        function filterArticles(tag) {
+            activeTag = tag;
+
+            // Update button states
+            document.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.tag === tag);
+            });
+
+            // Show/hide articles
+            const cards = document.querySelectorAll('.article-card');
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const tags = JSON.parse(card.dataset.tags || '[]');
+                const show = tag === 'all' || tags.includes(tag);
+                card.dataset.hidden = show ? 'false' : 'true';
+                if (show) visibleCount++;
+            });
+
+            document.getElementById('no-articles-msg').classList.toggle('hidden', visibleCount > 0);
+
+            // Scroll to top of list
+            window.scrollTo({ top: document.getElementById('articles-list').offsetTop - 120, behavior: 'smooth' });
+        }
+
+        // ---- ARTICLE READER ----
+        function openArticle(id) {
+            const article = ARTICLES[id];
+            if (!article) return;
+
+            document.getElementById('article-title').textContent = article.title;
+            document.getElementById('article-category-label').textContent = article.category;
+            document.getElementById('article-read-time').textContent = article.readTime;
+            document.getElementById('article-date').textContent = article.date;
+            document.getElementById('article-body').innerHTML = article.body;
+
+            // Reset scroll
+            document.getElementById('article-scroll-body').scrollTop = 0;
+            document.getElementById('reading-progress').style.transform = 'scaleX(0)';
+
+            // Open drawer
+            const backdrop = document.getElementById('article-drawer-backdrop');
+            const drawer = document.getElementById('article-drawer');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            drawer.classList.remove('translate-x-full');
+            drawer.classList.add('translate-x-0');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeArticle() {
+            const backdrop = document.getElementById('article-drawer-backdrop');
+            const drawer = document.getElementById('article-drawer');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            drawer.classList.remove('translate-x-0');
+            drawer.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function updateReadingProgress() {
+            const body = document.getElementById('article-scroll-body');
+            const progress = body.scrollTop / (body.scrollHeight - body.clientHeight);
+            document.getElementById('reading-progress').style.transform = `scaleX(${Math.min(progress, 1)})`;
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeArticle();
+        });
+
+        // ---- CLOCK ----
+        function updateClock() {
+            const clockElement = document.getElementById('realtime-clock');
+            if (!clockElement) return;
+            const formatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+            });
+            clockElement.textContent = `DEHRADUN · ${formatter.format(new Date())} IST`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+
+</html>

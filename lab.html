@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aman Bhardwaj | Lab</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Geist:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "charcoal-ink": "#1A1816",
+                        "primary-container": "#1d1b19",
+                        "surface": "#fdf9f2",
+                        "surface-container-highest": "#e6e2db",
+                        "secondary-container": "#ff996f",
+                        "surface-container-high": "#ece8e1",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf9f2",
+                        "on-surface-variant": "#4b4640",
+                        "secondary-fixed-dim": "#ffb598",
+                        "tertiary-fixed-dim": "#ccc5bd",
+                        "on-tertiary-fixed": "#1e1b16",
+                        "on-primary-fixed-variant": "#494644",
+                        "on-primary-fixed": "#1d1b19",
+                        "inverse-on-surface": "#f4f0e9",
+                        "warm-slate": "#706B64",
+                        "error-container": "#ffdad6",
+                        "bone-white": "#F5F1EA",
+                        "on-primary-container": "#878380",
+                        "primary-fixed-dim": "#cbc5c2",
+                        "primary-fixed": "#e7e1de",
+                        "surface-container": "#f1ede6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#1e1b16",
+                        "on-tertiary-fixed-variant": "#4a4640",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#cbc5c2",
+                        "secondary-fixed": "#ffdbce",
+                        "outline-variant": "#cec5bd",
+                        "surface-container-low": "#f7f3ec",
+                        "on-tertiary-container": "#89837c",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-fixed-variant": "#78310f",
+                        "outline": "#7d766f",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "surface-tint": "#615e5b",
+                        "on-error-container": "#93000a",
+                        "copper-accent": "#B35D38",
+                        "on-background": "#1c1c18",
+                        "on-secondary": "#ffffff",
+                        "background": "#fdf9f2",
+                        "surface-dim": "#dddad3",
+                        "on-secondary-container": "#772f0d",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e9e1d9",
+                        "on-secondary-fixed": "#370e00",
+                        "inverse-surface": "#31302c",
+                        "secondary": "#974724",
+                        "tertiary": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "24px",
+                        "stack-md": "24px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": [
+                            "geist"
+                        ],
+                        "display-xl": [
+                            "ebGaramond"
+                        ],
+                        "mono-ui": [
+                            "geist"
+                        ],
+                        "body-lg": [
+                            "geist"
+                        ],
+                        "headline-lg": [
+                            "ebGaramond"
+                        ],
+                        "body-md": [
+                            "geist"
+                        ],
+                        "headline-md": [
+                            "ebGaramond"
+                        ],
+                        "headline-lg-mobile": [
+                            "ebGaramond"
+                        ],
+                        "display-xl-mobile": [
+                            "ebGaramond"
+                        ]
+                    },
+                    "fontSize": {
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-xl": [
+                            "80px",
+                            {
+                                "lineHeight": "90px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "mono-ui": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-md": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-xl-mobile": [
+                            "48px",
+                            {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and base typography setup */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .geist {
+            font-family: 'Geist', sans-serif;
+        }
+
+        .ebGaramond {
+            font-family: 'EB Garamond', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-primary font-body-md selection:bg-charcoal-ink selection:text-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-charcoal-ink/90 backdrop-blur-md border-b border-warm-slate/10 transition-all duration-500 ease-in-out">
+        <div
+            class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-3">
+                <img alt="Aman Bhardwaj" class="w-8 h-8 rounded-full object-cover"
+                    src="aman_bhardwaj_portrait.png" />
+                <a href="index.html" class="flex items-baseline gap-2">
+                    <span class="font-body-md font-medium text-primary dark:text-on-primary">Aman Bhardwaj</span>
+                    <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">SOFTWARE ENGINEER</span>
+                </a>
+            </div>
+            <div class="hidden lg:flex items-center gap-8">
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="index.html">Home</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="work.html">Work</a>
+                <a class="font-body-md text-primary dark:text-on-primary border-b border-copper-accent pb-1"
+                    href="#">Lab</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="writing.html">Writing</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="life.html">Life</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="contact.html">Contact</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-6">
+                <span id="realtime-clock" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">DEHRADUN · IST</span>
+                <button
+                    class="flex items-center justify-center w-8 h-8 border border-warm-slate/30 rounded text-warm-slate hover:text-primary hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[16px]">search</span>
+                </button>
+                <a class="font-body-md text-primary dark:text-on-primary border border-primary dark:border-on-primary px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-colors flex items-center gap-2"
+                    href="contact.html">
+                    Get in touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-primary hover:opacity-70 transition-opacity duration-300">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-[96px] pb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <!-- Lab Header -->
+        <div class="flex items-center gap-4 mb-8">
+            <span class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold">Lab</span>
+            <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">Systems & Low Level Hacking</span>
+        </div>
+
+        <h1 class="font-display-xl-mobile text-[48px] md:font-display-xl md:text-[80px] leading-[0.95] text-primary dark:text-on-primary tracking-tight mb-10 max-w-5xl">
+            Where I build things that don't have a brief yet.
+        </h1>
+        <p class="font-body-lg text-warm-slate dark:text-warm-slate/90 text-lg md:text-xl leading-relaxed mb-16 max-w-4xl">
+            This lab serves as my sandbox for systems experiments. From writing kernel code, operating system bootloaders, and custom assemblers to crafting raw HTML/CSS parsing architectures and game loops. Low-level components built purely to understand what is happening under the hood.
+        </p>
+
+        <!-- Project List Section -->
+        <div class="border-t border-warm-slate/15 dark:border-warm-slate/25">
+            <!-- Project 1: Project Kite Browser -->
+            <div class="border-b border-warm-slate/15 dark:border-warm-slate/25 py-8 group">
+                <span class="font-mono-ui text-[9px] text-warm-slate/75 dark:text-warm-slate/50 uppercase tracking-widest block mb-4">Last Updated Apr 2026</span>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                    <!-- Status -->
+                    <div class="md:col-span-2 flex items-baseline">
+                        <span class="w-1.5 h-1.5 rounded-full bg-copper-accent mr-2 shrink-0"></span>
+                        <span class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold">Active</span>
+                    </div>
+                    <!-- Category -->
+                    <div class="md:col-span-2">
+                        <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">Rendering Systems</span>
+                    </div>
+                    <!-- Description Details -->
+                    <div class="md:col-span-7">
+                        <h3 class="font-body-md text-xl font-bold text-primary dark:text-on-primary mb-3">
+                            Project Kite Browser
+                        </h3>
+                        <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-5">
+                            Developing a browser engine with custom HTML/CSS parsers, DOM tree generation, layout computation, tokenizer states, style resolution rules, paint ordering lists, and layout tree structure rendering in Rust.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <button onclick="openLabProject('kite')" class="font-mono-ui text-[10px] font-semibold text-primary dark:text-on-primary border border-warm-slate/30 dark:border-warm-slate/50 bg-[#fbf9f2] dark:bg-[#1f1d1b] px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-all flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[13px]">description</span> View Source &amp; Docs
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="md:col-span-1 flex justify-end text-warm-slate group-hover:text-copper-accent group-hover:translate-x-1 transition-all duration-300">
+                        <span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Project Retro-OS -->
+            <div class="border-b border-warm-slate/15 dark:border-warm-slate/25 py-8 group">
+                <span class="font-mono-ui text-[9px] text-warm-slate/75 dark:text-warm-slate/50 uppercase tracking-widest block mb-4">Last Updated Jan 2026</span>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                    <!-- Status -->
+                    <div class="md:col-span-2 flex items-baseline">
+                        <span class="w-1.5 h-1.5 rounded-full bg-copper-accent mr-2 shrink-0"></span>
+                        <span class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold leading-tight">Systems Research</span>
+                    </div>
+                    <!-- Category -->
+                    <div class="md:col-span-2">
+                        <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">Operating Systems</span>
+                    </div>
+                    <!-- Description Details -->
+                    <div class="md:col-span-7">
+                        <h3 class="font-body-md text-xl font-bold text-primary dark:text-on-primary mb-3">
+                            Project Retro-OS
+                        </h3>
+                        <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-5">
+                            Built a custom x86 operating system in C and x86 Assembly. Features kernel-level memory management, process task schedulers, interrupt service routines, low-level hardware controllers, fat-like file systems, and a GUI window rendering system.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/Mr-Charvaka/Retro-Os" target="_blank" rel="noopener" class="font-mono-ui text-[10px] font-semibold text-primary dark:text-on-primary border border-warm-slate/30 dark:border-warm-slate/50 bg-[#fbf9f2] dark:bg-[#1f1d1b] px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-all flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[13px]">hub</span> GitHub ↗
+                            </a>
+                            <button onclick="openLabProject('retros')" class="font-mono-ui text-[10px] font-semibold text-primary dark:text-on-primary border border-warm-slate/30 dark:border-warm-slate/50 bg-[#fbf9f2] dark:bg-[#1f1d1b] px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-all flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[13px]">description</span> View Source &amp; Docs
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="md:col-span-1 flex justify-end text-warm-slate group-hover:text-copper-accent group-hover:translate-x-1 transition-all duration-300">
+                        <span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Project E4K -->
+            <div class="border-b border-warm-slate/15 dark:border-warm-slate/25 py-8 group">
+                <span class="font-mono-ui text-[9px] text-warm-slate/75 dark:text-warm-slate/50 uppercase tracking-widest block mb-4">Last Updated Nov 2025</span>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                    <!-- Status -->
+                    <div class="md:col-span-2 flex items-baseline">
+                        <span class="w-1.5 h-1.5 rounded-full bg-copper-accent mr-2 shrink-0"></span>
+                        <span class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold leading-tight">Completed</span>
+                    </div>
+                    <!-- Category -->
+                    <div class="md:col-span-2">
+                        <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">Game Engine & Realtime</span>
+                    </div>
+                    <!-- Description Details -->
+                    <div class="md:col-span-7">
+                        <h3 class="font-body-md text-xl font-bold text-primary dark:text-on-primary mb-3">
+                            Project E4K
+                        </h3>
+                        <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-5">
+                            Developed a browser-based real-time multiplayer strategy game using Phaser.js. Integrated Supabase authentication, custom multiplayer state synchronization, high score leaderboards, and canvas rendering optimizations.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/Mr-Charvaka" target="_blank" rel="noopener" class="font-mono-ui text-[10px] font-semibold text-primary dark:text-on-primary border border-warm-slate/30 dark:border-warm-slate/50 bg-[#fbf9f2] dark:bg-[#1f1d1b] px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-all flex items-center gap-1.5">
+                                Play game <span class="text-[12px] leading-none">↗</span>
+                            </a>
+                            <button onclick="openLabProject('e4k')" class="font-mono-ui text-[10px] font-semibold text-primary dark:text-on-primary border border-warm-slate/30 dark:border-warm-slate/50 bg-[#fbf9f2] dark:bg-[#1f1d1b] px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-all flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[13px]">description</span> View Source &amp; Docs
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Arrow -->
+                    <div class="md:col-span-1 flex justify-end text-warm-slate group-hover:text-copper-accent group-hover:translate-x-1 transition-all duration-300">
+                        <span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-20 bg-surface dark:bg-charcoal-ink border-t border-warm-slate/10">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 text-left">
+                <!-- Copyright & Info -->
+                <div class="md:col-span-6 flex flex-col gap-3">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase">© 2026 Aman Bhardwaj</span>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/80 leading-relaxed max-w-sm">Built in Dehradun. Systems, backend, and low-level code.</p>
+                </div>
+                <!-- Work Link Column -->
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Work</span>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Project Syndicate</a>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">D-RAP</a>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Flow</a>
+                </div>
+                <!-- Writing Link Column -->
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Writing</span>
+                    <a href="writing.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Systems</a>
+                    <a href="writing.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Networking</a>
+                    <a href="writing.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Compilers</a>
+                </div>
+                <!-- More Link Column -->
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">More</span>
+                    <a href="https://www.linkedin.com/in/aman-bhardwaj" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">LinkedIn</a>
+                    <a href="https://github.com/Mr-Charvaka" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">GitHub</a>
+                    <a href="mailto:aman71204@hotmail.com" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('realtime-clock');
+            if (!clockElement) return;
+            const options = {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+            };
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            clockElement.textContent = `DEHRADUN · ${formatter.format(new Date())} IST`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+    <!-- Lab Project Detail Modal -->
+    <style>
+        #lab-modal-backdrop { transition: opacity 0.35s ease; }
+        #lab-modal { transition: transform 0.4s cubic-bezier(0.32,0.72,0,1); }
+        .lab-prose p { margin-bottom: 1.1rem; line-height: 1.8; color: #706B64; font-size: 0.9rem; }
+        .lab-prose h2 { font-family: 'EB Garamond', serif; font-size: 1.5rem; font-weight: 700; margin: 1.75rem 0 0.6rem; }
+        .lab-prose h3 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.4rem 0 0.4rem; }
+        .lab-prose ul { list-style: none; margin-bottom: 1.1rem; }
+        .lab-prose ul li { margin-bottom: 0.35rem; color: #706B64; font-size: 0.9rem; line-height: 1.65; }
+        .lab-prose ul li::before { content: "→ "; color: #B35D38; font-weight: 700; }
+        .lab-prose code { font-family: 'Geist', monospace; font-size: 0.78rem; background: rgba(112,107,100,0.1); padding: 0.1em 0.35em; border-radius: 3px; }
+        .lab-prose pre { background: #1A1816; color: #fdf9f2; padding: 1.1rem; border-radius: 4px; overflow-x: auto; margin: 1.1rem 0; font-size: 0.78rem; line-height: 1.7; }
+        .lab-prose pre code { background: none; padding: 0; }
+        .lab-prose blockquote { border-left: 2px solid #B35D38; padding-left: 1rem; margin: 1.25rem 0; font-style: italic; color: #706B64; }
+        /* GitHub Explorer mini styles for lab */
+        #lab-gh-loading { display:none; }
+        #lab-gh-no-repo { display:none; }
+        #lab-gh-error { display:none; }
+        #lab-gh-code-pre { display:none; }
+    </style>
+
+    <div id="lab-modal-backdrop" class="fixed inset-0 bg-charcoal-ink/40 backdrop-blur-sm opacity-0 pointer-events-none z-50" onclick="closeLabProject()"></div>
+
+    <div id="lab-modal" class="fixed top-0 right-0 h-full w-full md:w-[780px] lg:w-[860px] bg-surface dark:bg-charcoal-ink shadow-2xl z-[60] translate-x-full flex flex-col">
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between px-6 md:px-10 py-5 border-b border-warm-slate/10 dark:border-warm-slate/20 flex-shrink-0">
+            <div class="flex items-center gap-3 min-w-0">
+                <span id="lab-modal-category" class="font-mono-ui text-[10px] text-copper-accent uppercase tracking-widest font-semibold">Lab</span>
+                <span class="text-warm-slate/30">·</span>
+                <span id="lab-modal-status" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">Active</span>
+            </div>
+            <button onclick="closeLabProject()" class="flex items-center gap-1.5 px-3 py-1.5 border border-warm-slate/20 rounded text-warm-slate hover:text-primary hover:border-primary transition-all font-mono-ui text-[10px] uppercase tracking-wider flex-shrink-0">
+                <span class="material-symbols-outlined text-[14px]">close</span> Close
+            </button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="px-6 border-b border-warm-slate/10 dark:border-warm-slate/20 flex gap-6 bg-surface-container-lowest dark:bg-primary-container/10 flex-shrink-0">
+            <button id="lab-tab-docs" onclick="switchLabTab('docs')" class="py-3 font-mono-ui text-xs uppercase tracking-wider border-b-2 border-copper-accent text-primary dark:text-on-primary font-semibold transition-colors duration-200">Documentation</button>
+            <button id="lab-tab-code" onclick="switchLabTab('code')" class="py-3 font-mono-ui text-xs uppercase tracking-wider border-b-2 border-transparent text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors duration-200 flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px]">hub</span> GitHub Explorer
+            </button>
+        </div>
+
+        <!-- Docs Panel -->
+        <div id="lab-panel-docs" class="flex-1 overflow-y-auto px-6 md:px-10 py-8">
+            <h1 id="lab-modal-title" class="font-headline-lg text-3xl md:text-[42px] leading-[1.1] text-primary dark:text-on-primary tracking-tight mb-4"></h1>
+            <div id="lab-modal-body" class="lab-prose max-w-2xl"></div>
+        </div>
+
+        <!-- GitHub Explorer Panel (reusing same pattern) -->
+        <div id="lab-panel-code" class="flex-1 flex flex-col md:flex-row hidden" style="min-height:0;">
+            <div class="w-full md:w-72 border-b md:border-b-0 md:border-r border-warm-slate/15 dark:border-warm-slate/25 bg-surface-container-low dark:bg-primary-container/10 flex flex-col min-h-0">
+                <div class="px-4 py-3 border-b border-warm-slate/10 dark:border-warm-slate/20 flex items-center justify-between flex-shrink-0">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-[16px] text-copper-accent flex-shrink-0">hub</span>
+                        <a id="lab-gh-repo-link" href="#" target="_blank" rel="noopener" class="font-mono-ui text-[10px] text-copper-accent uppercase tracking-wider font-bold hover:underline truncate">Loading...</a>
+                    </div>
+                    <button onclick="labGhNavigateUp()" id="lab-gh-up-btn" class="hidden flex-shrink-0 p-1 border border-warm-slate/20 rounded text-warm-slate hover:text-primary hover:border-primary transition-all">
+                        <span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+                    </button>
+                </div>
+                <div id="lab-gh-breadcrumb" class="px-4 py-1.5 flex items-center gap-1 flex-wrap flex-shrink-0 border-b border-warm-slate/10 dark:border-warm-slate/15 text-[10px] font-mono text-warm-slate min-h-[28px]"></div>
+                <div id="lab-file-tree" class="flex-1 overflow-y-auto p-3 flex flex-col gap-0.5"></div>
+            </div>
+            <div class="flex-1 flex flex-col bg-surface-container-lowest dark:bg-primary-container/20 min-w-0 min-h-0">
+                <div class="px-4 py-2 border-b border-warm-slate/10 dark:border-warm-slate/20 flex items-center justify-between bg-surface-container-low dark:bg-primary-container/30 flex-shrink-0">
+                    <span id="lab-active-file" class="font-mono text-xs text-warm-slate truncate mr-2">Select a file</span>
+                    <div class="flex items-center gap-2 flex-shrink-0">
+                        <a id="lab-raw-link" href="#" target="_blank" rel="noopener" class="hidden items-center gap-1 px-2 py-1 border border-warm-slate/20 dark:border-warm-slate/40 rounded font-mono-ui text-[10px] text-warm-slate hover:text-copper-accent hover:border-copper-accent transition-all">
+                            <span class="material-symbols-outlined text-[12px]">open_in_new</span> Raw
+                        </a>
+                        <button id="lab-copy-btn" onclick="labCopyCode()" class="hidden items-center gap-1.5 px-2 py-1 border border-warm-slate/20 dark:border-warm-slate/40 rounded font-mono-ui text-[10px] text-warm-slate hover:text-primary hover:border-primary transition-all">
+                            <span class="material-symbols-outlined text-[12px]">content_copy</span> Copy
+                        </button>
+                    </div>
+                </div>
+                <div class="flex-1 overflow-auto p-4">
+                    <div id="lab-gh-no-repo" class="hidden h-full flex flex-col items-center justify-center gap-4 text-center py-12">
+                        <span class="material-symbols-outlined text-[48px] text-warm-slate/40">lock</span>
+                        <div>
+                            <p class="font-mono-ui text-xs text-warm-slate uppercase tracking-wider mb-2">Repository Not Public</p>
+                            <p class="text-xs text-warm-slate/70 leading-relaxed max-w-xs">This project's source code is private or not yet published on GitHub.</p>
+                        </div>
+                        <a href="https://github.com/Mr-Charvaka" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 border border-warm-slate/30 rounded font-mono-ui text-[10px] uppercase tracking-wider text-warm-slate hover:text-copper-accent hover:border-copper-accent transition-all">
+                            <span class="material-symbols-outlined text-[14px]">hub</span> View GitHub Profile
+                        </a>
+                    </div>
+                    <div id="lab-gh-loading" class="hidden h-full flex items-center justify-center gap-3">
+                        <div class="w-4 h-4 border-2 border-copper-accent border-t-transparent rounded-full animate-spin"></div>
+                        <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-wider">Fetching from GitHub...</span>
+                    </div>
+                    <div id="lab-gh-prompt" class="h-full flex flex-col items-center justify-center gap-3 text-center py-12">
+                        <span class="material-symbols-outlined text-[40px] text-warm-slate/30">folder_open</span>
+                        <p class="font-mono-ui text-[10px] text-warm-slate/60 uppercase tracking-wider">Select a file from the tree</p>
+                    </div>
+                    <div id="lab-gh-error" class="hidden h-full flex flex-col items-center justify-center gap-3 text-center py-12">
+                        <span class="material-symbols-outlined text-[40px] text-warm-slate/40">error_outline</span>
+                        <p id="lab-gh-error-msg" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-wider">Error loading file</p>
+                    </div>
+                    <pre id="lab-gh-code-pre" class="hidden flex min-h-full"><code id="lab-line-nums" class="select-none text-right text-warm-slate/40 pr-4 border-r border-warm-slate/10 mr-4 font-mono text-[12px] leading-relaxed shrink-0"></code><code id="lab-code-content" class="flex-1 font-mono text-[12px] leading-relaxed whitespace-pre overflow-x-auto text-primary dark:text-on-primary"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ---- Lab Project Data ----
+        const LAB_PROJECTS = {
+            kite: {
+                title: 'Project Kite Browser',
+                category: 'Rendering Systems',
+                status: 'Active · Apr 2026',
+                github: null,
+                body: `
+                    <p>Project Kite is a from-scratch browser engine written in Rust. The goal is to understand every layer of what happens between receiving raw HTML bytes and drawing pixels to screen — without using any browser library.</p>
+                    <h2>Architecture Overview</h2>
+                    <p>Kite follows the same pipeline as real browsers: <strong>Tokenization → DOM Construction → Style Resolution → Layout → Paint</strong>. Each stage feeds into the next, transforming bytes into geometry.</p>
+                    <h3>HTML Tokenizer</h3>
+                    <p>The tokenizer is a state machine with 80+ states, faithfully implementing the WHATWG HTML5 tokenization spec. It handles character references, CDATA sections, raw text elements (script, style), and void elements.</p>
+                    <h3>CSS Engine</h3>
+                    <p>The CSS parser handles selectors (element, class, ID, attribute, pseudo-class), the cascade, specificity, and inheritance. Computed values resolve relative units against their containing blocks.</p>
+                    <h3>Layout Engine</h3>
+                    <p>Kite implements Block Formatting Context and Inline Formatting Context. The box model (margin, border, padding, content) is computed per the CSS 2.1 spec. Line breaking uses a greedy algorithm with soft-wrap points.</p>
+                    <h2>Why Build This?</h2>
+                    <blockquote>Every abstraction eventually leaks. The only way to stop being surprised by browser behavior is to implement it yourself.</blockquote>
+                    <p>The project is private while actively under development. A public release is planned once basic rendering is stable.</p>
+                `
+            },
+            retros: {
+                title: 'Project Retro-OS',
+                category: 'Operating Systems',
+                status: 'Systems Research · Jan 2026',
+                github: { repo: 'Retro-Os', branch: 'master' },
+                body: `
+                    <p>Retro-OS is a bare-metal x86 operating system built from scratch. It does not use Linux, POSIX, or any standard library — every component is hand-written in C and x86 Assembly, compiled with NASM and GCC targeting i686.</p>
+                    <h2>Boot Process</h2>
+                    <p>The system boots via a custom 512-byte MBR bootloader written in x86 real-mode assembly. It transitions the CPU from 16-bit real mode to 32-bit protected mode, sets up a GDT, loads the kernel from disk via INT 0x13, and jumps to the C kernel entry point.</p>
+                    <h3>Memory Management</h3>
+                    <p>Retro-OS uses a paging-based virtual memory system with a physical frame allocator (bitmap), page directory/table setup, and a kernel heap allocator built on a first-fit free-list. <code>kmalloc</code> and <code>kfree</code> are fully custom.</p>
+                    <h3>Interrupt Handling</h3>
+                    <p>The IDT maps 256 interrupt vectors. CPU exceptions (div by zero, page fault, GPF) are handled with diagnostic messages. IRQs are remapped via the 8259 PIC. Timer (IRQ0) and keyboard (IRQ1) drivers are implemented.</p>
+                    <h2>File System</h2>
+                    <p>A simple FAT-inspired flat file system lives on a virtual disk image. The VFS layer provides <code>open()</code>, <code>read()</code>, <code>write()</code>, and <code>close()</code> syscall interfaces.</p>
+                    <h2>GitHub</h2>
+                    <p>The project is fully open-source at <a href="https://github.com/Mr-Charvaka/Retro-Os" target="_blank" class="text-copper-accent hover:underline">github.com/Mr-Charvaka/Retro-Os</a> with 10+ stars. Browse the source code using the GitHub Explorer tab above.</p>
+                `
+            },
+            e4k: {
+                title: 'Project E4K',
+                category: 'Game Engine & Realtime',
+                status: 'Completed · Nov 2025',
+                github: null,
+                body: `
+                    <p>E4K is a browser-based real-time multiplayer strategy game built on Phaser.js. Players compete in turn-based or real-time matches with live state synchronization over WebSockets.</p>
+                    <h2>Tech Stack</h2>
+                    <ul>
+                        <li><strong>Phaser.js</strong> for canvas-based game rendering and scene management</li>
+                        <li><strong>Supabase</strong> for authentication, real-time subscriptions, and PostgreSQL storage</li>
+                        <li><strong>Node.js WebSocket server</strong> for game state synchronization</li>
+                        <li><strong>Custom game loop</strong> at fixed 60Hz with client-side interpolation</li>
+                    </ul>
+                    <h2>Multiplayer Architecture</h2>
+                    <p>The server runs an authoritative game loop. Clients send input events; the server validates and broadcasts world state updates. Client-side prediction + reconciliation keeps gameplay smooth even on high-latency connections.</p>
+                    <h3>Canvas Optimization</h3>
+                    <p>With 100+ sprites on screen, dirty region tracking and sprite batching kept the frame time under 8ms on mid-range hardware. Off-screen canvas buffering eliminated per-frame DOM reflows.</p>
+                    <h2>Leaderboards</h2>
+                    <p>A real-time leaderboard uses Supabase's postgres_changes subscription. Score updates propagate to all connected clients within 50ms without polling.</p>
+                `
+            }
+        };
+
+        const LAB_GH_OWNER = 'Mr-Charvaka';
+        let labCurrentProject = null;
+        let labCurrentTab = 'docs';
+        let labGhPath = '';
+        let labGhCache = {};
+        let labGhFileContent = '';
+
+        function openLabProject(id) {
+            const data = LAB_PROJECTS[id];
+            if (!data) return;
+            labCurrentProject = id;
+            labGhPath = '';
+            labGhCache = {};
+            labGhFileContent = '';
+
+            document.getElementById('lab-modal-title').textContent = data.title;
+            document.getElementById('lab-modal-category').textContent = data.category;
+            document.getElementById('lab-modal-status').textContent = data.status;
+            document.getElementById('lab-modal-body').innerHTML = data.body;
+
+            const repoLink = document.getElementById('lab-gh-repo-link');
+            if (data.github) {
+                repoLink.textContent = `${LAB_GH_OWNER}/${data.github.repo}`;
+                repoLink.href = `https://github.com/${LAB_GH_OWNER}/${data.github.repo}`;
+            } else {
+                repoLink.textContent = 'No public repo';
+                repoLink.href = `https://github.com/${LAB_GH_OWNER}`;
+            }
+
+            switchLabTab('docs');
+
+            const backdrop = document.getElementById('lab-modal-backdrop');
+            const modal = document.getElementById('lab-modal');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            modal.classList.remove('translate-x-full');
+            modal.classList.add('translate-x-0');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLabProject() {
+            const backdrop = document.getElementById('lab-modal-backdrop');
+            const modal = document.getElementById('lab-modal');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            modal.classList.remove('translate-x-0');
+            modal.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function switchLabTab(tab) {
+            labCurrentTab = tab;
+            const docsBtn = document.getElementById('lab-tab-docs');
+            const codeBtn = document.getElementById('lab-tab-code');
+            const docsPanel = document.getElementById('lab-panel-docs');
+            const codePanel = document.getElementById('lab-panel-code');
+            const ACTIVE = 'py-3 font-mono-ui text-xs uppercase tracking-wider border-b-2 border-copper-accent text-primary dark:text-on-primary font-semibold transition-colors duration-200';
+            const INACTIVE = 'py-3 font-mono-ui text-xs uppercase tracking-wider border-b-2 border-transparent text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors duration-200 flex items-center gap-1.5';
+            if (tab === 'docs') {
+                docsBtn.className = ACTIVE;
+                codeBtn.className = INACTIVE;
+                docsPanel.classList.remove('hidden');
+                codePanel.classList.add('hidden');
+                codePanel.classList.remove('flex');
+            } else {
+                codeBtn.className = ACTIVE + ' flex items-center gap-1.5';
+                docsBtn.className = 'py-3 font-mono-ui text-xs uppercase tracking-wider border-b-2 border-transparent text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors duration-200';
+                docsPanel.classList.add('hidden');
+                codePanel.classList.remove('hidden');
+                codePanel.classList.add('flex');
+                const proj = LAB_PROJECTS[labCurrentProject];
+                if (!proj.github) {
+                    labGhShowState('no-repo');
+                    document.getElementById('lab-file-tree').innerHTML = '';
+                } else if (!labGhCache[labGhPath]) {
+                    labGhLoadTree(labGhPath);
+                }
+            }
+        }
+
+        function labGhShowState(state) {
+            ['lab-gh-no-repo','lab-gh-loading','lab-gh-prompt','lab-gh-error','lab-gh-code-pre'].forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            const map = { 'no-repo':'lab-gh-no-repo','loading':'lab-gh-loading','prompt':'lab-gh-prompt','error':'lab-gh-error','code':'lab-gh-code-pre' };
+            if (map[state]) document.getElementById(map[state]).classList.remove('hidden');
+        }
+
+        async function labGhLoadTree(path) {
+            const proj = LAB_PROJECTS[labCurrentProject];
+            if (!proj || !proj.github) { labGhShowState('no-repo'); return; }
+            labGhPath = path;
+            labGhShowState('loading');
+            document.getElementById('lab-gh-up-btn').classList.toggle('hidden', path === '');
+            labGhBreadcrumb(path);
+            if (labGhCache[path]) { labGhRenderTree(labGhCache[path]); labGhShowState('prompt'); return; }
+            const apiPath = path ? `/contents/${path}` : '/contents';
+            const url = `https://api.github.com/repos/${LAB_GH_OWNER}/${proj.github.repo}${apiPath}?ref=${proj.github.branch}`;
+            try {
+                const res = await fetch(url, { headers: { 'Accept': 'application/vnd.github.v3+json' } });
+                if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+                const items = await res.json();
+                items.sort((a,b) => a.type === b.type ? a.name.localeCompare(b.name) : a.type === 'dir' ? -1 : 1);
+                labGhCache[path] = items;
+                labGhRenderTree(items);
+                labGhShowState('prompt');
+            } catch(e) {
+                document.getElementById('lab-gh-error-msg').textContent = `Error: ${e.message}`;
+                labGhShowState('error');
+            }
+        }
+
+        function labGhRenderTree(items) {
+            const tree = document.getElementById('lab-file-tree');
+            tree.innerHTML = '';
+            items.forEach(item => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-left px-2.5 py-1.5 rounded text-xs font-mono flex items-center gap-2 hover:bg-warm-slate/10 dark:hover:bg-primary-container/40 transition-all duration-150 text-warm-slate group';
+                const isDir = item.type === 'dir';
+                const icon = isDir ? 'folder' : labGhFileIcon(item.name);
+                const iconClass = isDir ? 'text-[14px] text-amber-500' : 'text-[14px] text-warm-slate/70 group-hover:text-primary';
+                btn.innerHTML = `<span class="material-symbols-outlined ${iconClass}">${icon}</span><span class="truncate">${item.name}</span>`;
+                if (isDir) btn.addEventListener('click', () => labGhLoadTree(item.path));
+                else btn.addEventListener('click', () => labGhSelectFile(btn, item));
+                tree.appendChild(btn);
+            });
+        }
+
+        function labGhFileIcon(name) {
+            if (name.endsWith('.rs')) return 'settings';
+            if (name.endsWith('.c')||name.endsWith('.h')) return 'memory';
+            if (name.endsWith('.asm')||name.endsWith('.s')) return 'developer_board';
+            if (name.endsWith('.py')) return 'code_blocks';
+            if (name.endsWith('.go')) return 'deployed_code';
+            if (name.endsWith('.ts')||name.endsWith('.tsx')) return 'javascript';
+            if (name.endsWith('.js')) return 'javascript';
+            if (name.endsWith('.md')) return 'article';
+            if (name.endsWith('.json')) return 'data_object';
+            if (name.endsWith('.toml')||name.endsWith('.yaml')||name.endsWith('.yml')) return 'tune';
+            if (name.endsWith('.sh')) return 'terminal';
+            return 'description';
+        }
+
+        function labGhDetectLang(name) {
+            if (name.endsWith('.rs')) return 'rust';
+            if (name.endsWith('.c')||name.endsWith('.h')) return 'c';
+            if (name.endsWith('.asm')||name.endsWith('.s')) return 'asm';
+            if (name.endsWith('.py')) return 'python';
+            if (name.endsWith('.go')) return 'go';
+            if (name.endsWith('.ts')||name.endsWith('.tsx')||name.endsWith('.js')) return 'javascript';
+            return 'text';
+        }
+
+        async function labGhSelectFile(btn, item) {
+            document.querySelectorAll('#lab-file-tree button').forEach(b =>
+                b.classList.remove('bg-copper-accent/10','border-l-2','border-copper-accent','text-copper-accent','font-semibold'));
+            btn.classList.add('bg-copper-accent/10','border-l-2','border-copper-accent','text-copper-accent','font-semibold');
+            document.getElementById('lab-active-file').textContent = item.path;
+            const proj = LAB_PROJECTS[labCurrentProject];
+            const rawUrl = `https://raw.githubusercontent.com/${LAB_GH_OWNER}/${proj.github.repo}/${proj.github.branch}/${item.path}`;
+            const ghLink = `https://github.com/${LAB_GH_OWNER}/${proj.github.repo}/blob/${proj.github.branch}/${item.path}`;
+            document.getElementById('lab-raw-link').href = ghLink;
+            document.getElementById('lab-raw-link').classList.remove('hidden');
+            document.getElementById('lab-raw-link').classList.add('flex');
+            document.getElementById('lab-copy-btn').classList.remove('hidden');
+            document.getElementById('lab-copy-btn').classList.add('flex');
+            labGhShowState('loading');
+            try {
+                const res = await fetch(rawUrl);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const text = await res.text();
+                labGhFileContent = text;
+                if (text.length > 200000) { document.getElementById('lab-gh-error-msg').textContent='File too large'; labGhShowState('error'); return; }
+                // Simple highlight
+                const lang = labGhDetectLang(item.name);
+                const highlighted = typeof highlightCode === 'function' ? highlightCode(text, lang) : text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                document.getElementById('lab-code-content').innerHTML = highlighted;
+                const lines = text.split('\n');
+                document.getElementById('lab-line-nums').innerHTML = lines.map((_,i)=>i+1).join('\n');
+                labGhShowState('code');
+            } catch(e) {
+                document.getElementById('lab-gh-error-msg').textContent = `Failed: ${e.message}`;
+                labGhShowState('error');
+            }
+        }
+
+        function labGhNavigateUp() {
+            if (!labGhPath) return;
+            const parts = labGhPath.split('/');
+            parts.pop();
+            labGhLoadTree(parts.join('/'));
+        }
+
+        function labGhBreadcrumb(path) {
+            const el = document.getElementById('lab-gh-breadcrumb');
+            if (!path) { el.innerHTML = ''; return; }
+            const parts = path.split('/');
+            let html = `<button onclick="labGhLoadTree('')" class="hover:text-copper-accent transition-colors">root</button>`;
+            parts.forEach((part, i) => {
+                const pp = parts.slice(0, i+1).join('/');
+                html += `<span class="text-warm-slate/40">/</span><button onclick="labGhLoadTree('${pp}')" class="hover:text-copper-accent transition-colors">${part}</button>`;
+            });
+            el.innerHTML = html;
+        }
+
+        function labCopyCode() {
+            if (!labGhFileContent) return;
+            navigator.clipboard.writeText(labGhFileContent).then(() => {
+                const btn = document.getElementById('lab-copy-btn');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<span class="material-symbols-outlined text-[12px]">done</span> Copied!';
+                setTimeout(() => { btn.innerHTML = orig; }, 2000);
+            });
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLabProject(); });
+    </script>
+</body>
+
+</html>

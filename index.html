@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aman Bhardwaj | Engineer</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Geist:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- React & Babel CDN Libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "charcoal-ink": "#1A1816",
+                        "primary-container": "#1d1b19",
+                        "surface": "#fdf9f2",
+                        "surface-container-highest": "#e6e2db",
+                        "secondary-container": "#ff996f",
+                        "surface-container-high": "#ece8e1",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf9f2",
+                        "on-surface-variant": "#4b4640",
+                        "secondary-fixed-dim": "#ffb598",
+                        "tertiary-fixed-dim": "#ccc5bd",
+                        "on-tertiary-fixed": "#1e1b16",
+                        "on-primary-fixed-variant": "#494644",
+                        "on-primary-fixed": "#1d1b19",
+                        "inverse-on-surface": "#f4f0e9",
+                        "warm-slate": "#706B64",
+                        "error-container": "#ffdad6",
+                        "bone-white": "#F5F1EA",
+                        "on-primary-container": "#878380",
+                        "primary-fixed-dim": "#cbc5c2",
+                        "primary-fixed": "#e7e1de",
+                        "surface-container": "#f1ede6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#1e1b16",
+                        "on-tertiary-fixed-variant": "#4a4640",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#cbc5c2",
+                        "secondary-fixed": "#ffdbce",
+                        "outline-variant": "#cec5bd",
+                        "surface-container-low": "#f7f3ec",
+                        "on-tertiary-container": "#89837c",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-fixed-variant": "#78310f",
+                        "outline": "#7d766f",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "surface-tint": "#615e5b",
+                        "on-error-container": "#93000a",
+                        "copper-accent": "#B35D38",
+                        "on-background": "#1c1c18",
+                        "on-secondary": "#ffffff",
+                        "background": "#fdf9f2",
+                        "surface-dim": "#dddad3",
+                        "on-secondary-container": "#772f0d",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e9e1d9",
+                        "on-secondary-fixed": "#370e00",
+                        "inverse-surface": "#31302c",
+                        "secondary": "#974724",
+                        "tertiary": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "24px",
+                        "stack-md": "24px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": [
+                            "geist"
+                        ],
+                        "display-xl": [
+                            "ebGaramond"
+                        ],
+                        "mono-ui": [
+                            "geist"
+                        ],
+                        "body-lg": [
+                            "geist"
+                        ],
+                        "headline-lg": [
+                            "ebGaramond"
+                        ],
+                        "body-md": [
+                            "geist"
+                        ],
+                        "headline-md": [
+                            "ebGaramond"
+                        ],
+                        "headline-lg-mobile": [
+                            "ebGaramond"
+                        ],
+                        "display-xl-mobile": [
+                            "ebGaramond"
+                        ]
+                    },
+                    "fontSize": {
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-xl": [
+                            "80px",
+                            {
+                                "lineHeight": "90px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "mono-ui": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-md": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-xl-mobile": [
+                            "48px",
+                            {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and base typography setup */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .geist {
+            font-family: 'Geist', sans-serif;
+        }
+
+        .ebGaramond {
+            font-family: 'EB Garamond', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-primary font-body-md selection:bg-charcoal-ink selection:text-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-charcoal-ink/90 backdrop-blur-md border-b border-warm-slate/10 transition-all duration-500 ease-in-out">
+        <div
+            class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-3">
+                <img alt="Aman Bhardwaj" class="w-8 h-8 rounded-full object-cover" src="aman_bhardwaj_portrait.png" />
+                <div class="flex items-baseline gap-2">
+                    <span class="font-body-md font-medium text-primary dark:text-on-primary">Aman Bhardwaj</span>
+                    <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">SOFTWARE
+                        ENGINEER</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-8">
+                <a class="font-body-md text-primary dark:text-on-primary border-b border-copper-accent pb-1"
+                    href="#">Home</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="work.html">Work</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="lab.html">Lab</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="writing.html">Writing</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="life.html">Life</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="contact.html">Contact</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-6">
+                <span id="realtime-clock"
+                    class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">DEHRADUN · IST</span>
+                <button
+                    class="flex items-center justify-center w-8 h-8 border border-warm-slate/30 rounded text-warm-slate hover:text-primary hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[16px]">search</span>
+                </button>
+                <a class="font-body-md text-primary dark:text-on-primary border border-primary dark:border-on-primary px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-colors flex items-center gap-2"
+                    href="contact.html">
+                    Get in touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-primary hover:opacity-70 transition-opacity duration-300">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+    <main class="pt-[66px] pb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start pt-8 lg:pt-12 min-h-[calc(100vh-200px)]">
+            <!-- Left Column -->
+            <div class="flex flex-col justify-center">
+                <div class="flex items-center gap-2 mb-8">
+                    <div class="w-2 h-2 rounded-full bg-copper-accent"></div>
+                    <span
+                        class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest font-medium">CURRENTLY
+                        IN DEHRADUN - OPEN TO INTERESTING CONVERSATIONS</span>
+                </div>
+                <h1
+                    class="font-display-xl-mobile text-[64px] md:font-display-xl md:text-[110px] leading-[0.9] text-primary tracking-tight mb-8">
+                    Full-Stack.<br />
+                    Systems.<br />
+                    <span class="text-copper-accent">Backend.</span>
+                </h1>
+                <p class="font-body-lg text-warm-slate max-w-md text-xl leading-relaxed">
+                    Computer Science graduate with practical experience building scalable web apps, custom operating
+                    systems, and developer tools in Rust, Go, C, and JavaScript.
+                </p>
+            </div>
+            <!-- Right Column -->
+            <div class="flex flex-col items-center lg:items-end justify-center w-full">
+                <img alt="Hand-drawn portrait of Aman Bhardwaj"
+                    class="w-full max-w-[450px] h-auto object-contain mix-blend-multiply mb-12"
+                    src="aman_bhardwaj_portrait.png" />
+                <div class="grid grid-cols-3 gap-4 md:gap-8 w-full max-w-[500px]">
+                    <div>
+                        <div class="font-headline-md text-4xl md:text-5xl text-primary mb-2">04</div>
+                        <div class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">YEARS CODING
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-headline-md text-4xl md:text-5xl text-primary mb-2">6+</div>
+                        <div class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">COMPLEX PROJECTS
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-headline-md text-4xl md:text-5xl text-primary mb-2">7.0</div>
+                        <div class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">GPA B.TECH
+                            CSE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Now Currently Section -->
+        <section class="mt-24 md:mt-36 border-t border-warm-slate/10 pt-16">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-8">
+                <div class="flex items-center gap-4">
+                    <span
+                        class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold">01
+                        / NOW</span>
+                    <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">CURRENTLY</span>
+                </div>
+                <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">UPDATED MAY 2026</span>
+            </div>
+
+            <p class="font-body-lg text-warm-slate text-lg md:text-xl leading-relaxed mb-12 max-w-3xl">
+                A live snapshot of what is moving right now: work, learning, coffee, fermentation, and the current book
+                on the nightstand.
+            </p>
+
+            <!-- Row 1: 2 Columns (Work & Learning) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- WORK Card -->
+                <div
+                    class="bg-surface-container-low/40 dark:bg-primary-container/30 border border-warm-slate/15 hover:border-copper-accent/30 hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-6 md:p-8 flex flex-col justify-between min-h-[220px]">
+                    <div>
+                        <span
+                            class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest font-semibold block mb-4">Work</span>
+                        <h3 class="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-3">
+                            Building Project Syndicate</h3>
+                        <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed">
+                            Developing a multi-agent AI collaboration platform where autonomous agents coordinate
+                            workflows, shared memory pipelines, and automated execution tasks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LEARNING Card -->
+                <div
+                    class="bg-surface-container-low/40 dark:bg-primary-container/30 border border-warm-slate/15 hover:border-copper-accent/30 hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-6 md:p-8 flex flex-col justify-between min-h-[220px]">
+                    <div>
+                        <span
+                            class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest font-semibold block mb-4">Learning</span>
+                        <h3 class="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-3">
+                            Operating Systems & Web Engines</h3>
+                        <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed">
+                            Diving into low-level systems programming, custom memory managers, tokenizers, layout
+                            computation, and browser layout engines in Rust.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Row 2: 3 Columns (Coffee, Kombucha, Books) - React Interactive Component -->
+            <div id="interactive-dashboard-root"></div>
+        </section>
+
+        <!-- Selected Work Section -->
+        <section id="work" class="mt-24 md:mt-36 border-t border-warm-slate/10 pt-16">
+            <!-- Selected Work Header -->
+            <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-8">
+                <div class="flex items-center gap-4">
+                    <span
+                        class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold">02
+                        / WORK</span>
+                    <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">SELECTED
+                        WORK</span>
+                </div>
+                <a href="https://github.com/Mr-Charvaka"
+                    class="font-mono-ui text-[10px] text-primary dark:text-on-primary hover:text-copper-accent transition-colors duration-300 font-semibold tracking-wider flex items-center gap-1">
+                    View all work <span class="text-[12px] leading-none">↗</span>
+                </a>
+            </div>
+
+            <h2
+                class="font-display-xl-mobile text-[48px] md:font-display-xl md:text-[80px] leading-[0.95] text-primary dark:text-on-primary tracking-tight mb-16 max-w-5xl">
+                Making software that spans systems and interfaces. <span
+                    class="text-warm-slate dark:text-warm-slate/60 font-light">Three projects that say<br
+                        class="hidden md:inline" /> the most.</span>
+            </h2>
+
+            <!-- Selected Work Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Project Syndicate -->
+                <div class="flex flex-col h-full group">
+                    <div
+                        class="overflow-hidden rounded-xl bg-surface-container border border-warm-slate/10 aspect-[4/3] mb-6">
+                        <img src="syndicate_mockup.png" alt="Project Syndicate UI Mockup"
+                            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                            style="filter: grayscale(8%) contrast(1.05);" />
+                    </div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span
+                            class="font-mono-ui text-[10px] text-copper-accent uppercase tracking-widest font-semibold">01
+                            · PROJECT SYNDICATE</span>
+                        <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">2025 -
+                            PRESENT</span>
+                    </div>
+                    <h3 class="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-3">
+                        Orchestration engine and shared memory for multi-agent AI workflows
+                    </h3>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6">
+                        Built a multi-agent AI collaboration platform where autonomous agents coordinate workflows and
+                        task
+                        execution. Developed orchestration systems, shared memory pipelines, and integrated
+                        decentralized
+                        wallet systems.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Python</span>
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Node.js</span>
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">LLM
+                            APIs</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Project D-RAP -->
+                <div class="flex flex-col h-full group">
+                    <div
+                        class="overflow-hidden rounded-xl bg-surface-container border border-warm-slate/10 aspect-[4/3] mb-6">
+                        <img src="drap_mockup.png" alt="Project D-RAP UI Mockup"
+                            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                            style="filter: grayscale(8%) contrast(1.05);" />
+                    </div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span
+                            class="font-mono-ui text-[10px] text-copper-accent uppercase tracking-widest font-semibold">02
+                            · PROJECT D-RAP</span>
+                        <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">2025 -
+                            PRESENT</span>
+                    </div>
+                    <h3 class="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-3">
+                        Secure high-performance network tunneling relay in Rust & Go
+                    </h3>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6">
+                        Engineered a tunneling platform using asynchronous Rust (Tokio) and Go to securely expose local
+                        services via unified relays. Developed real-time SvelteKit dashboard backed by PostgreSQL
+                        database
+                        for bandwidth tracking.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Rust</span>
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Go</span>
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">PostgreSQL</span>
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Project Flow -->
+                <div class="flex flex-col h-full group">
+                    <div
+                        class="overflow-hidden rounded-xl bg-surface-container border border-warm-slate/10 aspect-[4/3] mb-6">
+                        <img src="flow_mockup.png" alt="Project Flow UI Mockup"
+                            class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                            style="filter: grayscale(8%) contrast(1.05);" />
+                    </div>
+                    <div class="flex justify-between items-center mb-3">
+                        <span
+                            class="font-mono-ui text-[10px] text-copper-accent uppercase tracking-widest font-semibold">03
+                            · PROJECT FLOW</span>
+                        <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">2025 -
+                            PRESENT</span>
+                    </div>
+                    <h3 class="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-3">
+                        Visual programming platform translating logic to deployable stacks
+                    </h3>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6">
+                        Conceptualized and built a visual drag-and-drop programming interface that seamlessly maps
+                        visual
+                        logic workflows to scalable backend and frontend architectures, converting diagrams to
+                        functional
+                        applications.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">No-Code</span>
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">React</span>
+                        <span
+                            class="border border-warm-slate/20 dark:border-warm-slate/30 text-warm-slate dark:text-warm-slate/85 rounded px-2 py-0.5 text-[9px] font-mono-ui uppercase tracking-wider font-semibold">Compiler
+                            Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-20 bg-surface dark:bg-charcoal-ink border-t border-warm-slate/10">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 text-left">
+                <!-- Copyright & Info -->
+                <div class="md:col-span-6 flex flex-col gap-3">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase">© 2026
+                        Aman Bhardwaj</span>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/80 leading-relaxed max-w-sm">
+                        Built in Dehradun. Systems, backend, and low-level code.</p>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span
+                        class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Work</span>
+                    <a href="work.html"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Project
+                        Syndicate</a>
+                    <a href="work.html"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">D-RAP</a>
+                    <a href="work.html"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Flow</a>
+                </div>
+                <!-- Writing Link Column -->
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span
+                        class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Writing</span>
+                    <a href="writing.html"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Systems</a>
+                    <a href="writing.html"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Networking</a>
+                    <a href="writing.html"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Compilers</a>
+                </div>
+                <!-- More Link Column -->
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span
+                        class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">More</span>
+                    <a href="https://www.linkedin.com/in/aman-bhardwaj"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">LinkedIn</a>
+                    <a href="https://github.com/Mr-Charvaka"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">GitHub</a>
+                    <a href="mailto:aman71204@hotmail.com"
+                        class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('realtime-clock');
+            if (!clockElement) return;
+            const options = {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            clockElement.textContent = `DEHRADUN · ${formatter.format(new Date())} IST`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+    <!-- CSS Animations for React Component Dashboard -->
+    <style>
+        /* 3D Book perspective & flip */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        /* 3D tilt hover */
+        .tilt-card {
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s;
+        }
+        .tilt-card:hover {
+            transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateY(-4px);
+        }
+
+        /* Steam animation */
+        @keyframes steamUp {
+            0% {
+                transform: translateY(0) scaleX(1);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-12px) scaleX(1.3);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-25px) scaleX(0.8);
+                opacity: 0;
+            }
+        }
+        .steam-line {
+            animation: steamUp 2.5s infinite ease-in-out;
+        }
+        .steam-line-delay-1 {
+            animation-delay: 0.6s;
+        }
+        .steam-line-delay-2 {
+            animation-delay: 1.3s;
+        }
+
+        /* Rising Bubbles animation */
+        @keyframes riseUp {
+            0% {
+                transform: translateY(45px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            80% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 0;
+            }
+        }
+        .bubble-particle {
+            animation: riseUp 3.5s infinite linear;
+        }
+        .bubble-1 { animation-delay: 0.2s; }
+        .bubble-2 { animation-delay: 1.0s; }
+        .bubble-3 { animation-delay: 0.6s; }
+        .bubble-4 { animation-delay: 1.8s; }
+        .bubble-5 { animation-delay: 1.4s; }
+
+        /* ECG Line Animation */
+        @keyframes ecgScroll {
+            0% {
+                stroke-dashoffset: 200;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        .ecg-line {
+            stroke-dasharray: 200;
+            animation: ecgScroll 4s infinite linear;
+        }
+
+        /* Coffee Drip Animation */
+        @keyframes dripFall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            85% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+        }
+        .coffee-drip {
+            animation: dripFall 1.2s infinite cubic-bezier(0.5, 0, 1, 0.5);
+        }
+
+        /* Fade-in for slides */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+
+    <!-- React Dashboard Application Scripts -->
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // --- COFFEE CARD COMPONENT ---
+        const COFFEE_PROFILES = [
+            {
+                name: "Attikan Estate",
+                subtitle: "Blue Tokai · Single Origin",
+                roasters: "BLUE TOKAI ROASTERS · INDIA",
+                method: "POUR OVER · SLOW BREW ON RAINY DAYS",
+                grind: "Medium-Coarse",
+                temp: "94°C",
+                ratio: "1:16 (15g / 240g)",
+                notes: "Sweet chocolate, balanced acidity, dark cherry undertones."
+            },
+            {
+                name: "Dhak Blend",
+                subtitle: "Blue Tokai · Signature Blend",
+                roasters: "BLUE TOKAI ROASTERS · BOLD ROAST",
+                method: "ESPRESSO · RICH & SYRUPY DOUBLE SHOT",
+                grind: "Fine (Espresso)",
+                temp: "93°C",
+                ratio: "1:2 (18g in / 36g out)",
+                notes: "Cacao, dark chocolate, heavy mouthfeel, toasted nuts."
+            },
+            {
+                name: "Gung Giri",
+                subtitle: "Blue Tokai · Yeast Fermented",
+                roasters: "BLUE TOKAI ROASTERS · LIGHT-MEDIUM ROAST",
+                method: "AEROPRESS & INVERTED METHOD",
+                grind: "Medium",
+                temp: "88°C",
+                ratio: "1:12.5 (16g / 200g)",
+                notes: "Fruity, bright citrus, floral aroma, clean finish."
+            }
+        ];
+
+        function CoffeeCard() {
+            const [cups, setCups] = useState(0);
+            const [profileIdx, setProfileIdx] = useState(0);
+            const [showDrip, setShowDrip] = useState(false);
+            const prevCupsRef = useRef(0);
+
+            const currentProfile = COFFEE_PROFILES[profileIdx];
+
+            useEffect(() => {
+                if (cups > prevCupsRef.current && cups > 0) {
+                    setShowDrip(true);
+                    const timer = setTimeout(() => setShowDrip(false), 3000);
+                    return () => clearTimeout(timer);
+                }
+                prevCupsRef.current = cups;
+            }, [cups]);
+
+            const getStatusText = () => {
+                if (cups === 0) return "NONE YET TODAY";
+                if (cups === 1) return "1 CUP · GENTLE FOCUS";
+                if (cups === 2) return "2 CUPS · OPTIMAL FOCUS";
+                return "3 CUPS · CAFFEINE BUZZING!";
+            };
+
+            const getStatusColor = () => {
+                if (cups === 0) return "text-warm-slate/85 dark:text-warm-slate/60";
+                if (cups === 1) return "text-amber-600 dark:text-amber-400 font-semibold";
+                if (cups === 2) return "text-copper-accent font-semibold animate-pulse";
+                return "text-red-500 dark:text-red-400 font-bold";
+            };
+
+            const handleCupClick = (idx) => {
+                if (cups === idx + 1) {
+                    setCups(idx);
+                } else {
+                    setCups(idx + 1);
+                }
+            };
+
+            return (
+                <div className="bg-surface-container-low/40 dark:bg-primary-container/30 border border-warm-slate/15 hover:border-copper-accent/30 hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-6 md:p-8 flex flex-col justify-between min-h-[460px]">
+                    <div>
+                        <div className="flex justify-between items-start mb-4">
+                            <span className="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest font-semibold">Coffee</span>
+                            <div className="flex gap-1.5 bg-warm-slate/5 dark:bg-warm-slate/10 p-0.5 rounded border border-warm-slate/10">
+                                {COFFEE_PROFILES.map((_, idx) => (
+                                    <button 
+                                        key={idx}
+                                        onClick={() => setProfileIdx(idx)}
+                                        className={`w-4 h-4 rounded text-[8px] font-mono-ui flex items-center justify-center transition-all ${profileIdx === idx ? 'bg-copper-accent text-white font-bold' : 'text-warm-slate hover:bg-warm-slate/10'}`}
+                                        title="Switch Coffee Beans"
+                                    >
+                                        {idx + 1}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                        <h3 className="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-2">
+                            {currentProfile.method.split(' · ')[0]}
+                        </h3>
+                        <p className="font-body-md text-sm text-warm-slate dark:text-warm-slate/90">
+                            {currentProfile.subtitle}
+                        </p>
+                    </div>
+
+                    {/* Animated Pour Over V60 SVG */}
+                    <div className="flex flex-col items-center justify-center my-4 relative">
+                        <svg viewBox="0 0 100 120" className="w-20 h-24 text-warm-slate/60 dark:text-warm-slate/40 hover:text-copper-accent/90 transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                            {/* Animated steam lines */}
+                            {cups > 0 && (
+                                <g>
+                                    <path d="M44,20 Q47,15 44,10" className="steam-line steam-line-delay-1" stroke="currentColor" strokeWidth="0.8" />
+                                    <path d="M50,19 Q53,12 50,7" className="steam-line" stroke="currentColor" strokeWidth="0.8" />
+                                    <path d="M56,20 Q59,16 56,11" className="steam-line steam-line-delay-2" stroke="currentColor" strokeWidth="0.8" />
+                                </g>
+                            )}
+
+                            {/* Dripper Cone */}
+                            <path d="M25,25 L75,25 L55,55 L45,55 Z" />
+                            {/* Filter paper lines */}
+                            <path d="M29,27 L71,27 L50,55 Z" strokeDasharray="2,2" className="opacity-60" />
+                            {/* Coffee grounds fill */}
+                            <path d="M35,34 C42,36 58,36 65,34 L50,54 Z" fill="#4a2c11" opacity="0.75" stroke="none" />
+                            
+                            {/* Dripping coffee droplets */}
+                            {(cups > 0 || showDrip) && (
+                                <circle cx="50" cy="62" r="1.2" fill="#4a2c11" stroke="none" className="coffee-drip" />
+                            )}
+                            
+                            {/* Server (Glass range server) */}
+                            <path d="M40,58 L60,58 L65,98 C65,103 60,105 50,105 C40,105 35,103 35,98 Z" />
+                            {/* Spout and handle */}
+                            <path d="M37,58 L32,58" />
+                            <path d="M63,65 C68,65 72,69 72,77 C72,85 68,89 63,89" />
+
+                            {/* Coffee liquid rising based on logged cups */}
+                            {cups > 0 && (
+                                <path 
+                                    d={`M${35 + (3 - cups) * 1.5},${102 - (cups * 11)} 
+                                        L${65 - (3 - cups) * 1.5},${102 - (cups * 11)} 
+                                        C${65 - (3 - cups) * 1.5},${102 - (cups * 11)} 65,100 65,98
+                                        L65,98 
+                                        C65,103 60,105 50,105 
+                                        C40,105 35,103 35,98 
+                                        L35,98
+                                        C35,100 ${35 + (3 - cups) * 1.5},${102 - (cups * 11)} ${35 + (3 - cups) * 1.5},${102 - (cups * 11)} Z`} 
+                                    fill="#4a2c11" 
+                                    opacity="0.85" 
+                                    stroke="none" 
+                                    style={{ transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)' }}
+                                />
+                            )}
+                        </svg>
+
+                        {/* Interactive Tracker Cups */}
+                        <div className="flex items-center gap-2 mt-4">
+                            <div className="flex items-center gap-1.5">
+                                {[0, 1, 2].map((idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => handleCupClick(idx)}
+                                        className={`w-4 h-4 rounded-full border transition-all duration-300 ${cups > idx ? 'bg-copper-accent border-copper-accent shadow-sm scale-110' : 'bg-surface-container-high dark:bg-primary-container/50 border-warm-slate/35 hover:border-copper-accent/60'}`}
+                                        title={`Log Cup ${idx + 1}`}
+                                    />
+                                ))}
+                            </div>
+                            <span className={`font-mono-ui text-[9px] tracking-widest uppercase ml-2 select-none ${getStatusColor()}`}>
+                                {getStatusText()}
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Source details */}
+                    <div className="text-center my-2 bg-warm-slate/5 dark:bg-warm-slate/10 p-2.5 rounded-lg border border-warm-slate/10 transition-all duration-300">
+                        <h4 className="font-body-md font-semibold text-primary dark:text-on-primary text-sm leading-tight">
+                            {currentProfile.name}
+                        </h4>
+                        <p className="font-mono-ui text-[8px] text-warm-slate/85 dark:text-warm-slate/50 tracking-widest uppercase mt-0.5">
+                            {currentProfile.roasters}
+                        </p>
+                        <p className="font-mono-ui text-[8px] text-copper-accent tracking-widest uppercase mt-0.5 font-bold">
+                            {currentProfile.method}
+                        </p>
+                        <div className="flex justify-around text-[9px] font-mono-ui text-warm-slate/80 mt-2 border-t border-warm-slate/10 pt-1.5">
+                            <span>Grind: <strong className="text-primary dark:text-on-primary">{currentProfile.grind}</strong></span>
+                            <span>Ratio: <strong className="text-primary dark:text-on-primary">{currentProfile.ratio.split(' ')[0]}</strong></span>
+                            <span>Temp: <strong className="text-primary dark:text-on-primary">{currentProfile.temp}</strong></span>
+                        </div>
+                    </div>
+
+                    {/* Bottom divider and footer text */}
+                    <div className="mt-auto">
+                        <hr className="border-warm-slate/10 dark:border-warm-slate/25 mb-3" />
+                        <span className="font-mono-ui text-[8px] text-warm-slate/80 dark:text-warm-slate/50 tracking-widest uppercase block text-center md:text-left">
+                            LIGHT ROAST COFFEE CHILL SESSIONS
+                        </span>
+                    </div>
+                </div>
+            );
+        }
+
+        // --- KOMBUCHA & EXERCISE CAROUSEL COMPONENT ---
+        function KombuchaExerciseCard() {
+            const [slide, setSlide] = useState(0);
+            
+            // Exercise Tracker states
+            const [moveCal, setMoveCal] = useState(420);
+            const [exMin, setExMin] = useState(25);
+            const [standHr, setStandHr] = useState(9);
+            const [isPulseActive, setIsPulseActive] = useState(false);
+
+            const handleLogActivity = (type) => {
+                setIsPulseActive(true);
+                setTimeout(() => setIsPulseActive(false), 2000);
+
+                if (type === 'run') {
+                    setMoveCal(prev => Math.min(600, prev + 120));
+                    setExMin(prev => Math.min(30, prev + 10));
+                    setStandHr(prev => Math.min(12, prev + 1));
+                } else if (type === 'yoga') {
+                    setMoveCal(prev => Math.min(600, prev + 60));
+                    setExMin(prev => Math.min(30, prev + 15));
+                    setStandHr(prev => Math.min(12, prev + 1));
+                } else {
+                    setMoveCal(120);
+                    setExMin(5);
+                    setStandHr(4);
+                }
+            };
+
+            const renderSlide = () => {
+                if (slide === 0) {
+                    return (
+                        <div className="flex flex-col items-center mt-3 z-10 w-full animate-fadeIn transition-opacity duration-300">
+                            <span className="font-mono-ui text-[9px] text-warm-slate/75 dark:text-warm-slate/50 tracking-widest uppercase mb-4">
+                                Batch #12 · Falsa & Ginger Lemon
+                            </span>
+                            
+                            {/* Kombucha wide-mouth jar SVG */}
+                            <svg viewBox="0 0 100 110" className="w-16 h-20 text-warm-slate/60 dark:text-warm-slate/40 hover:text-copper-accent/90 transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="38" y="16" width="24" height="6" rx="1.5" fill="currentColor" className="opacity-10" />
+                                <rect x="36" y="22" width="28" height="3" rx="0.5" fill="currentColor" className="opacity-20" />
+                                <path d="M35,25 C35,25 32,27 32,32 L32,88 C32,93 36,95 50,95 C64,95 68,93 68,88 L68,32 C68,27 65,25 65,25" />
+                                
+                                {/* Berries/Falsa pink liquid content */}
+                                <path d="M33,38 L67,38 L67,86 C67,91 63,93 50,93 C37,93 33,91 33,86 Z" fill="#e28a9d" className="opacity-55 dark:opacity-35" stroke="none" />
+                                <path d="M33,38 C40,40 60,36 67,38" className="opacity-80" stroke="currentColor" />
+                                
+                                {/* Floating Cream Colored Scoby */}
+                                <path d="M35,43 C42,41 58,41 65,43 C66,45 62,47 50,47 C38,47 34,45 35,43 Z" fill="#f5eedc" stroke="#dcd0b8" strokeWidth="0.6" />
+
+                                {/* Animated fermentation bubbles */}
+                                <circle cx="38" cy="46" r="0.8" fill="currentColor" className="bubble-particle bubble-1" stroke="none" />
+                                <circle cx="45" cy="58" r="1.2" fill="currentColor" className="bubble-particle bubble-2" stroke="none" />
+                                <circle cx="58" cy="48" r="0.6" fill="currentColor" className="bubble-particle bubble-3" stroke="none" />
+                                <circle cx="62" cy="65" r="1.0" fill="currentColor" className="bubble-particle bubble-4" stroke="none" />
+                                <circle cx="49" cy="80" r="1.2" fill="currentColor" className="bubble-particle bubble-5" stroke="none" />
+                                
+                                <path d="M64,32 V85" strokeWidth="0.8" strokeDasharray="5,4" className="opacity-25" />
+                            </svg>
+
+                            {/* Batch Stats Panel */}
+                            <div className="grid grid-cols-3 gap-2 w-full mt-5 px-2 text-center">
+                                <div className="bg-warm-slate/5 dark:bg-warm-slate/10 p-1.5 rounded border border-warm-slate/10">
+                                    <span className="block text-[7px] font-mono-ui text-warm-slate tracking-widest">TEMP</span>
+                                    <strong className="text-xs text-primary dark:text-on-primary">24.2°C</strong>
+                                </div>
+                                <div className="bg-warm-slate/5 dark:bg-warm-slate/10 p-1.5 rounded border border-warm-slate/10">
+                                    <span className="block text-[7px] font-mono-ui text-warm-slate tracking-widest">PH LEVEL</span>
+                                    <strong className="text-xs text-copper-accent">3.4 pH</strong>
+                                </div>
+                                <div className="bg-warm-slate/5 dark:bg-warm-slate/10 p-1.5 rounded border border-warm-slate/10">
+                                    <span className="block text-[7px] font-mono-ui text-warm-slate tracking-widest">TIMELINE</span>
+                                    <strong className="text-xs text-primary dark:text-on-primary">Day 3 / 10</strong>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                } else if (slide === 1) {
+                    return (
+                        <div className="flex flex-col items-center mt-3 z-10 w-full animate-fadeIn transition-opacity duration-300">
+                            <span className="font-mono-ui text-[9px] text-warm-slate/75 dark:text-warm-slate/50 tracking-widest uppercase mb-4">
+                                Batch #11 · Apple Cinnamon
+                            </span>
+                            
+                            {/* Kombucha wide-mouth jar SVG */}
+                            <svg viewBox="0 0 100 110" className="w-16 h-20 text-warm-slate/60 dark:text-warm-slate/40 hover:text-copper-accent/90 transition-colors duration-300" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="38" y="16" width="24" height="6" rx="1.5" fill="currentColor" className="opacity-10" />
+                                <rect x="36" y="22" width="28" height="3" rx="0.5" fill="currentColor" className="opacity-20" />
+                                <path d="M35,25 C35,25 32,27 32,32 L32,88 C32,93 36,95 50,95 C64,95 68,93 68,88 L68,32 C68,27 65,25 65,25" />
+                                
+                                {/* Apple amber liquid content */}
+                                <path d="M33,38 L67,38 L67,86 C67,91 63,93 50,93 C37,93 33,91 33,86 Z" fill="#dca842" className="opacity-55 dark:opacity-35" stroke="none" />
+                                <path d="M33,38 C40,40 60,36 67,38" className="opacity-80" stroke="currentColor" />
+                                
+                                {/* Cinnamon stick inside */}
+                                <line x1="44" y1="46" x2="56" y2="76" stroke="#783e10" strokeWidth="3" strokeLinecap="round" className="opacity-70" />
+                                
+                                {/* Floating Cream Colored Scoby */}
+                                <path d="M35,43 C42,41 58,41 65,43 C66,45 62,47 50,47 C38,47 34,45 35,43 Z" fill="#f5eedc" stroke="#dcd0b8" strokeWidth="0.6" />
+
+                                {/* Minimal bubbles (completed fermentation) */}
+                                <circle cx="45" cy="58" r="0.6" fill="currentColor" className="opacity-30" stroke="none" />
+                                <circle cx="58" cy="48" r="0.8" fill="currentColor" className="opacity-30" stroke="none" />
+                                
+                                <path d="M64,32 V85" strokeWidth="0.8" strokeDasharray="5,4" className="opacity-25" />
+                            </svg>
+
+                            {/* Batch Stats Panel */}
+                            <div className="grid grid-cols-3 gap-2 w-full mt-5 px-2 text-center">
+                                <div className="bg-warm-slate/5 dark:bg-warm-slate/10 p-1.5 rounded border border-warm-slate/10">
+                                    <span className="block text-[7px] font-mono-ui text-warm-slate tracking-widest">TEMP</span>
+                                    <strong className="text-xs text-primary dark:text-on-primary">Completed</strong>
+                                </div>
+                                <div className="bg-warm-slate/5 dark:bg-warm-slate/10 p-1.5 rounded border border-warm-slate/10">
+                                    <span className="block text-[7px] font-mono-ui text-warm-slate tracking-widest">FINAL PH</span>
+                                    <strong className="text-xs text-copper-accent">3.1 pH</strong>
+                                </div>
+                                <div className="bg-warm-slate/5 dark:bg-warm-slate/10 p-1.5 rounded border border-warm-slate/10">
+                                    <span className="block text-[7px] font-mono-ui text-warm-slate tracking-widest">BOTTLED</span>
+                                    <strong className="text-xs text-primary dark:text-on-primary">100% Ready</strong>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                } else {
+                    const movePct = moveCal / 600;
+                    const exPct = exMin / 30;
+                    const standPct = standHr / 12;
+
+                    return (
+                        <div className="flex flex-col items-center mt-3 z-10 w-full animate-fadeIn transition-opacity duration-300">
+                            <span className="font-mono-ui text-[9px] text-warm-slate/75 dark:text-warm-slate/50 tracking-widest uppercase mb-3">
+                                Daily Activity Rings & Heartrate
+                            </span>
+
+                            <div className="flex flex-row items-center justify-around w-full mt-1.5">
+                                {/* Rings SVG */}
+                                <div className="relative w-28 h-28 flex items-center justify-center">
+                                    <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
+                                        <circle cx="50" cy="50" r="40" stroke="currentColor" className="text-warm-slate/10 dark:text-warm-slate/5" strokeWidth="6" fill="none" />
+                                        <circle cx="50" cy="50" r="40" stroke="#ff3b30" strokeWidth="6" fill="none" strokeLinecap="round" strokeDasharray={2 * Math.PI * 40} strokeDashoffset={2 * Math.PI * 40 * (1 - Math.min(1, movePct))} style={{ transition: 'stroke-dashoffset 0.8s ease-out' }} />
+
+                                        <circle cx="50" cy="50" r="32" stroke="currentColor" className="text-warm-slate/10 dark:text-warm-slate/5" strokeWidth="6" fill="none" />
+                                        <circle cx="50" cy="50" r="32" stroke="#4cd964" strokeWidth="6" fill="none" strokeLinecap="round" strokeDasharray={2 * Math.PI * 32} strokeDashoffset={2 * Math.PI * 32 * (1 - Math.min(1, exPct))} style={{ transition: 'stroke-dashoffset 0.8s ease-out' }} />
+
+                                        <circle cx="50" cy="50" r="24" stroke="currentColor" className="text-warm-slate/10 dark:text-warm-slate/5" strokeWidth="6" fill="none" />
+                                        <circle cx="50" cy="50" r="24" stroke="#00bcd4" strokeWidth="6" fill="none" strokeLinecap="round" strokeDasharray={2 * Math.PI * 24} strokeDashoffset={2 * Math.PI * 24 * (1 - Math.min(1, standPct))} style={{ transition: 'stroke-dashoffset 0.8s ease-out' }} />
+                                    </svg>
+                                    <span className="material-symbols-outlined absolute text-warm-slate/60 text-lg">
+                                        directions_run
+                                    </span>
+                                </div>
+
+                                {/* Info Columns */}
+                                <div className="flex flex-col gap-2 font-mono-ui text-[10px] w-1/2 text-left pl-2">
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="w-2.5 h-2.5 rounded-full bg-[#ff3b30] shrink-0" />
+                                        <span className="text-warm-slate">Move: </span>
+                                        <strong className="text-primary dark:text-on-primary">{moveCal} / 600 kcal</strong>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="w-2.5 h-2.5 rounded-full bg-[#4cd964] shrink-0" />
+                                        <span className="text-warm-slate">Ex: </span>
+                                        <strong className="text-primary dark:text-on-primary">{exMin} / 30 min</strong>
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <span className="w-2.5 h-2.5 rounded-full bg-[#00bcd4] shrink-0" />
+                                        <span className="text-warm-slate">Stand: </span>
+                                        <strong className="text-primary dark:text-on-primary">{standHr} / 12 hr</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Interactive Buttons */}
+                            <div className="flex gap-2 w-full mt-4 px-2 justify-center">
+                                <button onClick={() => handleLogActivity('run')} className="bg-warm-slate/5 dark:bg-warm-slate/10 hover:bg-copper-accent hover:text-white dark:hover:bg-copper-accent text-[9px] font-mono-ui uppercase tracking-wider py-1 px-2.5 rounded border border-warm-slate/15 transition-all">
+                                    +15m Run
+                                </button>
+                                <button onClick={() => handleLogActivity('yoga')} className="bg-warm-slate/5 dark:bg-warm-slate/10 hover:bg-copper-accent hover:text-white dark:hover:bg-copper-accent text-[9px] font-mono-ui uppercase tracking-wider py-1 px-2.5 rounded border border-warm-slate/15 transition-all">
+                                    +15m Yoga
+                                </button>
+                                <button onClick={() => handleLogActivity('reset')} className="bg-warm-slate/5 dark:bg-warm-slate/10 hover:text-red-500 text-[9px] font-mono-ui uppercase tracking-wider py-1 px-1.5 rounded border border-warm-slate/15 transition-all" title="Reset Rings">
+                                    ↺
+                                </button>
+                            </div>
+                        </div>
+                    );
+                }
+            };
+
+            const getHeaderTitle = () => {
+                if (slide === 0) return "Batch #12";
+                if (slide === 1) return "Batch #11";
+                return "Active Log";
+            };
+
+            const getHeaderCategory = () => {
+                if (slide === 0 || slide === 1) return "Kombucha";
+                return "Exercise";
+            };
+
+            return (
+                <div className="bg-surface-container-low/40 dark:bg-primary-container/30 border border-warm-slate/15 hover:border-copper-accent/30 hover:-translate-y-0.5 transition-all duration-300 rounded-xl p-6 md:p-8 flex flex-col justify-between min-h-[460px] relative overflow-hidden">
+                    <div>
+                        <span className="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest font-semibold block mb-4">
+                            {getHeaderCategory()}
+                        </span>
+                        <h3 className="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-2">
+                            {getHeaderTitle()}
+                        </h3>
+                        <p className="font-body-md text-sm text-warm-slate dark:text-warm-slate/90">
+                            {slide === 0 ? "Falsa & Ginger Lemon" : slide === 1 ? "Apple Cinnamon" : "Training & Recovery Loops"}
+                        </p>
+                    </div>
+
+                    {/* Render specific slide content */}
+                    {renderSlide()}
+
+                    {/* Heartrate Line Animation */}
+                    {slide === 2 && (
+                        <div className="w-full mt-2 select-none">
+                            <svg viewBox="0 0 200 40" className={`w-full h-8 ${isPulseActive ? 'text-red-500' : 'text-copper-accent'} opacity-65`}>
+                                <path 
+                                    d="M0,20 L60,20 L65,10 L70,30 L75,20 L90,20 L95,2 L100,38 L105,20 L120,20 L130,20 L135,12 L140,28 L145,20 L180,20 L200,20" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    strokeWidth="1.5" 
+                                    className="ecg-line" 
+                                    style={{ animationDuration: isPulseActive ? '1.5s' : '4.5s' }}
+                                />
+                            </svg>
+                        </div>
+                    )}
+
+                    {/* Carousel Pagination Dots */}
+                    <div className="flex items-center gap-1.5 justify-center mt-4">
+                        {[0, 1, 2].map((idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => setSlide(idx)}
+                                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${slide === idx ? 'bg-copper-accent scale-125' : 'bg-warm-slate/30 dark:bg-warm-slate/50 hover:bg-copper-accent/50'}`}
+                                title={`Slide ${idx + 1}`}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Bottom divider and footer text */}
+                    <div className="mt-auto pt-3">
+                        <hr className="border-warm-slate/10 dark:border-warm-slate/25 mb-3" />
+                        <span className="font-mono-ui text-[8px] text-warm-slate/80 dark:text-warm-slate/50 tracking-widest uppercase block text-center md:text-left">
+                            {slide === 0 ? "Day 3 · Fermenting Scoby Getting to work" : slide === 1 ? "Day 10 · Bottling completed" : "Fit loop · Let scoby ferment, you sweat!"}
+                        </span>
+                    </div>
+                </div>
+            );
+        }
+
+        // --- BOOKS CARD (3D TILT & FLIP) COMPONENT ---
+        const BOOK_NOTES = [
+            {
+                title: "Storage Layouts (LSM-trees vs B-trees)",
+                content: "LSM-Trees append writes to a log and periodically merge sorted tables (SSTables). Great for write-heavy workloads. B-Trees break memory down into fixed-size pages and write in-place. Great for fast point-reads."
+            },
+            {
+                title: "Replication Logs & Consensus",
+                content: "Covers single-leader, multi-leader, and leaderless setups. Detail maps consensus algorithms like Paxos/Raft that guarantee linearizability and agreement across unstable networks."
+            },
+            {
+                title: "Partitioning & Transactions",
+                content: "Breaking massive datasets into chunks. Uses range queries or key hashes. Details ACID transactions, read committed, snapshot isolation, and two-phase commit (2PC) protocol limits."
+            }
+        ];
+
+        function BooksCard() {
+            const [isFlipped, setIsFlipped] = useState(false);
+            const [expandedNote, setExpandedNote] = useState(null);
+
+            const toggleNote = (idx, e) => {
+                e.stopPropagation();
+                setExpandedNote(expandedNote === idx ? null : idx);
+            };
+
+            const handleFlip = () => {
+                setIsFlipped(!isFlipped);
+                setExpandedNote(null);
+            };
+
+            return (
+                <div className="perspective-1000 w-full h-[460px] cursor-pointer select-none" onClick={handleFlip}>
+                    <div className={`w-full h-full relative transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+                        
+                        {/* FRONT SIDE: Cover and Info */}
+                        <div className="absolute inset-0 backface-hidden bg-surface-container-low/40 dark:bg-primary-container/30 border border-warm-slate/15 rounded-xl p-6 md:p-8 flex flex-col justify-between tilt-card">
+                            <div>
+                                <span className="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest font-semibold block mb-4">Books</span>
+                                <span className="font-mono-ui text-[9px] text-warm-slate/70 dark:text-warm-slate/50 uppercase tracking-widest block mb-1">On Distributed Systems</span>
+                                <h3 className="font-body-md text-xl md:text-2xl font-bold text-primary dark:text-on-primary mb-3">Designing Data-Intensive Applications</h3>
+                                <p className="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed">
+                                    An in-depth guide to key principles, storage layouts, replication, consensus protocols, and partitioning schemas in scalable systems.
+                                </p>
+                            </div>
+
+                            {/* Center Graphic */}
+                            <div class="flex flex-col items-center justify-center my-4">
+                                <div className="relative w-[100px] h-[140px] mb-3 transition-transform duration-300 hover:scale-105">
+                                    {/* Page stack shadows */}
+                                    <div className="absolute inset-0 bg-surface-container-highest dark:bg-charcoal-ink/60 rounded-sm transform translate-x-1.5 translate-y-1.5 shadow-sm border border-warm-slate/10"></div>
+                                    {/* Book front cover */}
+                                    <div className="absolute inset-0 bg-[#0f2d24] dark:bg-[#071914] rounded-sm p-3 flex flex-col justify-between text-white shadow-md border border-black/10">
+                                        <span className="font-mono-ui text-[7px] text-white/40 tracking-widest uppercase">Nightstand</span>
+                                        <div className="mt-auto">
+                                            <h4 className="font-body-md text-[8px] font-bold leading-tight mb-1 text-[#fdf9f2]/95">Designing Data-Intensive Applications</h4>
+                                            <span className="font-mono-ui text-[6px] text-white/50 tracking-widest uppercase font-semibold">M. KLEPPMANN</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span className="font-mono-ui text-[8px] text-warm-slate/85 dark:text-warm-slate/60 tracking-widest uppercase mt-2">CURRENT READ · CLICK TO OPEN NOTES</span>
+                            </div>
+
+                            <div className="mt-auto pt-4 border-t border-warm-slate/10 flex justify-between items-center" onClick={(e) => e.stopPropagation()}>
+                                <a href="writing.html" className="font-mono-ui text-[10px] text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300 underline font-semibold tracking-wider">
+                                    Browse the shelf →
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* BACK SIDE: Notes and Quotes */}
+                        <div className="absolute inset-0 backface-hidden rotate-y-180 bg-surface-container-low/40 dark:bg-primary-container/30 border border-warm-slate/15 rounded-xl p-6 md:p-8 flex flex-col justify-between cursor-default" onClick={(e) => e.stopPropagation()}>
+                            <div>
+                                <div className="flex justify-between items-center mb-4 border-b border-warm-slate/10 dark:border-warm-slate/20 pb-2">
+                                    <span className="font-mono-ui text-[10px] text-copper-accent uppercase tracking-widest font-semibold">Takeaways</span>
+                                    <button onClick={handleFlip} className="text-warm-slate hover:text-primary transition-colors text-[10px] font-mono-ui uppercase tracking-wider">
+                                        Back ✕
+                                    </button>
+                                </div>
+                                <h3 className="font-body-md text-base font-bold text-primary dark:text-on-primary mb-2">
+                                    DDIA Summary Notes
+                                </h3>
+                                
+                                {/* Progress bar */}
+                                <div className="mb-4">
+                                    <div className="flex justify-between text-[9px] font-mono-ui text-warm-slate mb-1">
+                                        <span>Progress</span>
+                                        <span>75% (12 / 16 chapters)</span>
+                                    </div>
+                                    <div className="w-full h-1.5 bg-warm-slate/20 dark:bg-warm-slate/30 rounded-full overflow-hidden">
+                                        <div className="h-full bg-copper-accent rounded-full" style={{ width: '75%', transition: 'width 1s ease-out' }}></div>
+                                    </div>
+                                </div>
+
+                                {/* Dropdowns */}
+                                <div className="space-y-2 mt-2">
+                                    {BOOK_NOTES.map((note, idx) => (
+                                        <div key={idx} className="border-b border-warm-slate/10 dark:border-warm-slate/20 pb-2">
+                                            <button 
+                                                onClick={(e) => toggleNote(idx, e)}
+                                                className="w-full flex justify-between items-center text-left text-xs font-semibold text-primary dark:text-on-primary hover:text-copper-accent transition-colors"
+                                            >
+                                                <span>{note.title}</span>
+                                                <span className="text-[8px] transform transition-transform duration-200" style={{ transform: expandedNote === idx ? 'rotate(90deg)' : 'rotate(0)' }}>
+                                                    ▶
+                                                </span>
+                                            </button>
+                                            {expandedNote === idx && (
+                                                <p className="text-[11px] text-warm-slate dark:text-warm-slate/85 mt-1 leading-relaxed pl-2 border-l border-copper-accent/30 font-body-md">
+                                                    {note.content}
+                                                </p>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Favorite quote block */}
+                            <div className="mt-auto bg-surface-container dark:bg-primary-container/20 p-2.5 rounded border border-warm-slate/10 select-none">
+                                <span className="font-mono-ui text-[7px] text-copper-accent uppercase tracking-widest block mb-0.5 font-bold">Highlight Quote</span>
+                                <p className="font-body-md text-xs italic text-primary dark:text-on-primary leading-snug">
+                                    "A system is reliable if it continues to work correctly, even when things go wrong."
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            );
+        }
+
+        // --- MAIN DASHBOARD APP ---
+        function DashboardApp() {
+            return (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <CoffeeCard />
+                    <KombuchaExerciseCard />
+                    <BooksCard />
+                </div>
+            );
+        }
+
+        // Mount to root
+        const root = ReactDOM.createRoot(document.getElementById('interactive-dashboard-root'));
+        root.render(<DashboardApp />);
+    </script>
+</body>
+
+</html>

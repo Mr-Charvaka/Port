@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aman Bhardwaj | Life</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Geist:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "charcoal-ink": "#1A1816",
+                        "primary-container": "#1d1b19",
+                        "surface": "#fdf9f2",
+                        "surface-container-highest": "#e6e2db",
+                        "secondary-container": "#ff996f",
+                        "surface-container-high": "#ece8e1",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf9f2",
+                        "on-surface-variant": "#4b4640",
+                        "secondary-fixed-dim": "#ffb598",
+                        "tertiary-fixed-dim": "#ccc5bd",
+                        "on-tertiary-fixed": "#1e1b16",
+                        "on-primary-fixed-variant": "#494644",
+                        "on-primary-fixed": "#1d1b19",
+                        "inverse-on-surface": "#f4f0e9",
+                        "warm-slate": "#706B64",
+                        "error-container": "#ffdad6",
+                        "bone-white": "#F5F1EA",
+                        "on-primary-container": "#878380",
+                        "primary-fixed-dim": "#cbc5c2",
+                        "primary-fixed": "#e7e1de",
+                        "surface-container": "#f1ede6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#1e1b16",
+                        "on-tertiary-fixed-variant": "#4a4640",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#cbc5c2",
+                        "secondary-fixed": "#ffdbce",
+                        "outline-variant": "#cec5bd",
+                        "surface-container-low": "#f7f3ec",
+                        "on-tertiary-container": "#89837c",
+                        "on-surface": "#1c1c18",
+                        "on-secondary-fixed-variant": "#78310f",
+                        "outline": "#7d766f",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "surface-tint": "#615e5b",
+                        "on-error-container": "#93000a",
+                        "copper-accent": "#B35D38",
+                        "on-background": "#1c1c18",
+                        "on-secondary": "#ffffff",
+                        "background": "#fdf9f2",
+                        "surface-dim": "#dddad3",
+                        "on-secondary-container": "#772f0d",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e9e1d9",
+                        "on-secondary-fixed": "#370e00",
+                        "inverse-surface": "#31302c",
+                        "secondary": "#974724",
+                        "tertiary": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "24px",
+                        "stack-md": "24px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": [
+                            "geist"
+                        ],
+                        "display-xl": [
+                            "ebGaramond"
+                        ],
+                        "mono-ui": [
+                            "geist"
+                        ],
+                        "body-lg": [
+                            "geist"
+                        ],
+                        "headline-lg": [
+                            "ebGaramond"
+                        ],
+                        "body-md": [
+                            "geist"
+                        ],
+                        "headline-md": [
+                            "ebGaramond"
+                        ],
+                        "headline-lg-mobile": [
+                            "ebGaramond"
+                        ],
+                        "display-xl-mobile": [
+                            "ebGaramond"
+                        ]
+                    },
+                    "fontSize": {
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ],
+                        "display-xl": [
+                            "80px",
+                            {
+                                "lineHeight": "90px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "mono-ui": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg": [
+                            "48px",
+                            {
+                                "lineHeight": "56px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-md": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "display-xl-mobile": [
+                            "48px",
+                            {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "400"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and base typography setup */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .geist {
+            font-family: 'Geist', sans-serif;
+        }
+
+        .ebGaramond {
+            font-family: 'EB Garamond', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-primary font-body-md selection:bg-charcoal-ink selection:text-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-charcoal-ink/90 backdrop-blur-md border-b border-warm-slate/10 transition-all duration-500 ease-in-out">
+        <div
+            class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-3">
+                <img alt="Aman Bhardwaj" class="w-8 h-8 rounded-full object-cover"
+                    src="aman_bhardwaj_portrait.png" />
+                <a href="index.html" class="flex items-baseline gap-2">
+                    <span class="font-body-md font-medium text-primary dark:text-on-primary">Aman Bhardwaj</span>
+                    <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">SOFTWARE ENGINEER</span>
+                </a>
+            </div>
+            <div class="hidden lg:flex items-center gap-8">
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="index.html">Home</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="work.html">Work</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="lab.html">Lab</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="writing.html">Writing</a>
+                <a class="font-body-md text-primary dark:text-on-primary border-b border-copper-accent pb-1"
+                    href="#">Life</a>
+                <a class="font-body-md text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors"
+                    href="contact.html">Contact</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-6">
+                <span id="realtime-clock" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">DEHRADUN · IST</span>
+                <button
+                    class="flex items-center justify-center w-8 h-8 border border-warm-slate/30 rounded text-warm-slate hover:text-primary hover:border-primary transition-all">
+                    <span class="material-symbols-outlined text-[16px]">search</span>
+                </button>
+                <a class="font-body-md text-primary dark:text-on-primary border border-primary dark:border-on-primary px-4 py-2 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-colors flex items-center gap-2"
+                    href="contact.html">
+                    Get in touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-primary hover:opacity-70 transition-opacity duration-300">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-[96px] pb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+        <!-- Life Header -->
+        <div class="flex items-center gap-4 mb-10">
+            <span class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold">Life</span>
+            <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">Outside the work</span>
+        </div>
+
+        <!-- Hero Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+            <!-- Left: Travel collage mockup -->
+            <div class="overflow-hidden rounded-xl bg-surface-container border border-warm-slate/10 aspect-[4/3] w-full">
+                <img src="northeast_india_travel_mockup.png" alt="Northern India Travel Collage Mockup" class="w-full h-full object-cover hover:scale-[1.01] transition-transform duration-500" style="filter: grayscale(10%) contrast(1.05);" />
+            </div>
+
+            <!-- Right: Travel description -->
+            <div class="flex flex-col justify-center max-w-lg">
+                <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest font-semibold block mb-4">Travel / Northern India</span>
+                <h2 class="font-headline-lg text-3xl md:text-4xl font-bold text-primary dark:text-on-primary leading-tight mb-6">
+                    Dehradun, Mussoorie, and Landour. Walking the ridge lines.
+                </h2>
+                <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/90 leading-relaxed mb-6">
+                    Living at the foothills of the Himalayas teaches you about layout, perspective, and scale. Weekend treks up the ridge paths to Mussoorie and old Landour lanes show what details feel like when you step out of the editor.
+                </p>
+                <a href="#" class="font-mono-ui text-[10px] text-primary dark:text-on-primary hover:text-copper-accent transition-colors duration-300 underline font-semibold tracking-wider self-start">Read the full story ↗</a>
+            </div>
+        </div>
+
+        <!-- Library Section Divider -->
+        <div class="border-t border-warm-slate/15 dark:border-warm-slate/25 my-12"></div>
+
+        <!-- Library Header -->
+        <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-6 mb-12">
+            <div class="flex items-center gap-4">
+                <span class="font-mono-ui text-[10px] text-primary dark:text-on-primary uppercase tracking-widest font-semibold">Library</span>
+                <span class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">More Stories</span>
+            </div>
+            <!-- Tag Filter Bar -->
+            <div id="life-tag-bar" class="flex gap-2">
+                <button class="life-tag active" data-tag="all" onclick="filterLife('all')">All</button>
+                <button class="life-tag" data-tag="Travel" onclick="filterLife('Travel')">Travel</button>
+                <button class="life-tag" data-tag="Brewing" onclick="filterLife('Brewing')">Brewing</button>
+            </div>
+        </div>
+
+        <!-- Sub-grid Stories -->
+        <div id="life-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Story 1: Latte Art -->
+            <div class="life-card flex flex-col group cursor-pointer" data-tag="Brewing" onclick="openLifeStory('latte')">
+                <div class="overflow-hidden rounded-xl bg-surface-container border border-warm-slate/10 aspect-[4/3] mb-4">
+                    <img src="latte_art_mockup.png" alt="Coffee Latte Art Mockup" class="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" />
+                </div>
+                <span class="font-mono-ui text-[9px] text-warm-slate uppercase tracking-widest block mb-1">Brewing · 3 Min Read</span>
+                <h3 class="font-body-md font-semibold text-lg text-primary dark:text-on-primary group-hover:text-copper-accent transition-colors duration-300">
+                    The perfect pour: mastering microfoam
+                </h3>
+                <p class="font-body-md text-sm text-warm-slate mt-2 leading-relaxed">On learning the rhythm of steam and the geometry of latte art in a Dehradun winter.</p>
+            </div>
+
+            <!-- Story 2: European Travel -->
+            <div class="life-card flex flex-col group cursor-pointer" data-tag="Travel" onclick="openLifeStory('train')">
+                <div class="overflow-hidden rounded-xl bg-surface-container border border-warm-slate/10 aspect-[4/3] mb-4">
+                    <img src="travel_collage_mockup.png" alt="Travel Collage Mockup" class="w-full h-full object-cover group-hover:scale-[1.01] transition-transform duration-500" />
+                </div>
+                <span class="font-mono-ui text-[9px] text-warm-slate uppercase tracking-widest block mb-1">Travel · 4 Min Read</span>
+                <h3 class="font-body-md font-semibold text-lg text-primary dark:text-on-primary group-hover:text-copper-accent transition-colors duration-300">
+                    The journey almost didn't happen: tales of train routes
+                </h3>
+                <p class="font-body-md text-sm text-warm-slate mt-2 leading-relaxed">A missed booking, a last-minute reroute, and the strange peace of watching India blur past a window.</p>
+            </div>
+        </div>
+        <div id="life-no-results" class="hidden py-16 text-center">
+            <span class="material-symbols-outlined text-[40px] text-warm-slate/30">search_off</span>
+            <p class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-wider mt-3">No stories in this category yet</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-20 bg-surface dark:bg-charcoal-ink border-t border-warm-slate/10">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 text-left">
+                <div class="md:col-span-6 flex flex-col gap-3">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase">© 2026 Aman Bhardwaj</span>
+                    <p class="font-body-md text-sm text-warm-slate dark:text-warm-slate/80 leading-relaxed max-w-sm">Built in Dehradun. Systems, backend, and low-level code.</p>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Work</span>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Project Syndicate</a>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">D-RAP</a>
+                    <a href="work.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Flow</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">Writing</span>
+                    <a href="writing.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Systems</a>
+                    <a href="writing.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Networking</a>
+                    <a href="writing.html" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Compilers</a>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-2">
+                    <span class="font-mono-ui text-[10px] font-bold tracking-widest text-warm-slate uppercase mb-1">More</span>
+                    <a href="https://www.linkedin.com/in/aman-bhardwaj" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">LinkedIn</a>
+                    <a href="https://github.com/Mr-Charvaka" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">GitHub</a>
+                    <a href="mailto:aman71204@hotmail.com" class="font-body-md text-sm text-primary dark:text-on-primary hover:text-copper-accent dark:hover:text-copper-accent transition-colors duration-300">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== LIFE STORY READER ====== -->
+    <style>
+        .life-tag { border: 1px solid rgba(112,107,100,0.3); background: #fbf9f2; color: #706B64; font-size: 10px; font-family: 'Geist', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 7px 16px; cursor: pointer; transition: all 0.2s ease; border-radius: 2px; }
+        .life-tag.active { background: #000; color: #fff; border-color: #000; }
+        .life-tag:hover:not(.active) { border-color: #000; color: #000; }
+        .life-card[data-hidden="true"] { display: none; }
+        #life-story-backdrop { transition: opacity 0.35s ease; }
+        #life-story-drawer { transition: transform 0.4s cubic-bezier(0.32,0.72,0,1); }
+        .life-prose p { margin-bottom: 1.25rem; line-height: 1.85; color: #706B64; font-size: 0.95rem; }
+        .life-prose h2 { font-family: 'EB Garamond', serif; font-size: 1.6rem; font-weight: 700; margin: 2rem 0 0.75rem; }
+        .life-prose blockquote { border-left: 2px solid #B35D38; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #706B64; font-size: 1.05rem; }
+        .life-prose em { font-style: italic; }
+    </style>
+
+    <div id="life-story-backdrop" class="fixed inset-0 bg-charcoal-ink/40 backdrop-blur-sm opacity-0 pointer-events-none z-50" onclick="closeLifeStory()"></div>
+
+    <div id="life-story-drawer" class="fixed top-0 right-0 h-full w-full md:w-[700px] lg:w-[760px] bg-surface dark:bg-charcoal-ink shadow-2xl z-[60] translate-x-full flex flex-col">
+        <!-- Header -->
+        <div class="flex items-center justify-between px-6 md:px-10 py-5 border-b border-warm-slate/10 dark:border-warm-slate/20 flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <span id="life-story-tag" class="font-mono-ui text-[10px] text-copper-accent uppercase tracking-widest font-semibold">Travel</span>
+                <span class="text-warm-slate/30">·</span>
+                <span id="life-story-readtime" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest">4 Min Read</span>
+            </div>
+            <button onclick="closeLifeStory()" class="flex items-center gap-1.5 px-3 py-1.5 border border-warm-slate/20 rounded text-warm-slate hover:text-primary hover:border-primary transition-all font-mono-ui text-[10px] uppercase tracking-wider">
+                <span class="material-symbols-outlined text-[14px]">close</span> Close
+            </button>
+        </div>
+        <!-- Body -->
+        <div class="flex-1 overflow-y-auto px-6 md:px-16 py-10">
+            <!-- Hero image -->
+            <div id="life-story-img-wrap" class="w-full aspect-[16/7] rounded-xl overflow-hidden mb-10 bg-surface-container">
+                <img id="life-story-img" src="" alt="" class="w-full h-full object-cover" style="filter: contrast(1.05) saturate(0.9);" />
+            </div>
+            <h1 id="life-story-title" class="font-headline-lg text-3xl md:text-[40px] leading-[1.1] text-primary dark:text-on-primary tracking-tight mb-4 max-w-2xl"></h1>
+            <p id="life-story-date" class="font-mono-ui text-[10px] text-warm-slate uppercase tracking-widest mb-10"></p>
+            <div id="life-story-body" class="life-prose max-w-2xl"></div>
+            <div class="mt-16 pt-8 border-t border-warm-slate/10 dark:border-warm-slate/20">
+                <button onclick="closeLifeStory()" class="font-mono-ui text-[10px] uppercase tracking-widest text-warm-slate hover:text-copper-accent transition-colors flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[14px]">arrow_back</span> Back to Life
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ---- LIFE STORIES ----
+        const LIFE_STORIES = {
+            latte: {
+                title: 'The Perfect Pour: Mastering Microfoam',
+                tag: 'Brewing',
+                readTime: '3 Min Read',
+                date: 'March 2026',
+                img: 'latte_art_mockup.png',
+                body: `
+                    <p>I started making coffee seriously during a long stretch of systems work last winter. The kind of stretch where the only thing between you and the next kernel panic is a good cup and a quiet room.</p>
+                    <blockquote>Espresso is not patience. It's attention. The difference between a good shot and a terrible one is thirty seconds of presence.</blockquote>
+                    <h2>The First Hundred Failures</h2>
+                    <p>Microfoam is deceptively simple in theory. Steam the milk until it reaches 60–65°C, keep the wand just below the surface, introduce air in the first 8–10 seconds, then swirl to integrate. In practice, I made a hundred cups of flat milk and a dozen burnt disasters before it clicked.</p>
+                    <p>The texture you're chasing is something like warm cream that pours in a single unbroken sheet. Not bubbly, not thin, not separated. When you nail it, the latte art happens almost by itself — the milk finds its own surface tension and settles into patterns that feel less designed than discovered.</p>
+                    <h2>The Pour</h2>
+                    <p>I learned to pour closer to the surface than felt natural — maybe 2cm above the cup. High pours create turbulence; low pours let the milk and espresso layer correctly. The heart shape comes first, the rosette later. For now, I'm still chasing the heart.</p>
+                    <p>The parallel to writing code struck me one quiet morning: both are about reducing noise until only signal remains. A clean latte is like a clean function — nothing extraneous, nothing missing.</p>
+                `
+            },
+            train: {
+                title: "The Journey Almost Didn't Happen: Tales of Train Routes",
+                tag: 'Travel',
+                readTime: '4 Min Read',
+                date: 'January 2026',
+                img: 'travel_collage_mockup.png',
+                body: `
+                    <p>The booking was a mistake I only noticed at the platform. The train I had booked three weeks in advance was running twelve hours late, the replacement I found had no confirmed berth, and the alternative route added a five-hour layover in a city I had no intention of visiting.</p>
+                    <blockquote>The best travel stories begin with a plan that quietly falls apart and ends somewhere better than the original destination.</blockquote>
+                    <h2>The Reroute</h2>
+                    <p>I took the layover option. The five hours turned into seven — the second train was delayed, naturally — but by then I had found a small dhaba near the station run by an elderly man who made dal that tasted like something my grandmother would have approved of.</p>
+                    <p>I sat there for two hours writing in a notebook. The kind of writing you only do when you have nowhere urgent to be and no screen in front of you. I wrote about Dehradun, about the work I'd been putting off, about the ridge line above Mussoorie that I'd been meaning to walk for months.</p>
+                    <h2>What Train Travel Teaches</h2>
+                    <p>India's trains are slow. This is the complaint and also the point. You watch districts change as you move — the density, the color of the soil, the architecture of the platforms. You share a narrow berth's worth of space with strangers and by morning you've traded names and phone numbers and pieces of advice.</p>
+                    <p>There's a layout problem in this kind of travel that mirrors something I think about in systems design: the bottleneck is never where you expect it. The delay isn't the trains — it's the planning that assumed everything would run on time. The real route is always the one you discover after the first plan fails.</p>
+                `
+            }
+        };
+
+        // ---- FILTER ----
+        function filterLife(tag) {
+            document.querySelectorAll('.life-tag').forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+            let visible = 0;
+            document.querySelectorAll('.life-card').forEach(card => {
+                const show = tag === 'all' || card.dataset.tag === tag;
+                card.dataset.hidden = show ? 'false' : 'true';
+                if (show) visible++;
+            });
+            document.getElementById('life-no-results').classList.toggle('hidden', visible > 0);
+        }
+
+        // ---- STORY READER ----
+        function openLifeStory(id) {
+            const s = LIFE_STORIES[id];
+            if (!s) return;
+            document.getElementById('life-story-title').textContent = s.title;
+            document.getElementById('life-story-tag').textContent = s.tag;
+            document.getElementById('life-story-readtime').textContent = s.readTime;
+            document.getElementById('life-story-date').textContent = s.date;
+            document.getElementById('life-story-body').innerHTML = s.body;
+            document.getElementById('life-story-img').src = s.img;
+            document.getElementById('life-story-img').alt = s.title;
+
+            const backdrop = document.getElementById('life-story-backdrop');
+            const drawer = document.getElementById('life-story-drawer');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            drawer.classList.remove('translate-x-full');
+            drawer.classList.add('translate-x-0');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLifeStory() {
+            const backdrop = document.getElementById('life-story-backdrop');
+            const drawer = document.getElementById('life-story-drawer');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            drawer.classList.remove('translate-x-0');
+            drawer.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLifeStory(); });
+
+        // ---- CLOCK ----
+        function updateClock() {
+            const el = document.getElementById('realtime-clock');
+            if (!el) return;
+            el.textContent = `DEHRADUN · ${new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).format(new Date())} IST`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+
+</html>
