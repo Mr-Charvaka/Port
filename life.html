@@ -250,53 +250,10 @@
                     Get in touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
             </div>
-            <!-- Mobile Menu Button & Drawer -->
+            <!-- Mobile Menu Button -->
             <button id="open-menu-btn" class="lg:hidden text-primary dark:text-on-primary hover:opacity-70 transition-opacity duration-300">
                 <span class="material-symbols-outlined">menu</span>
             </button>
-            <div id="mobile-menu-drawer" class="fixed inset-0 z-[100] bg-[#fdf9f2] dark:bg-[#1A1816] flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
-                <div class="flex flex-col gap-6">
-                    <!-- Drawer Header -->
-                    <div class="flex justify-between items-center border-b border-warm-slate/10 pb-4 mb-4">
-                        <div class="flex items-center gap-3">
-                            <img alt="Aman Bhardwaj" class="w-8 h-8 rounded-full object-cover" src="aman_bhardwaj_portrait.png" />
-                            <div class="flex items-baseline gap-2">
-                                <span class="font-body-md font-medium text-primary dark:text-on-primary">Aman Bhardwaj</span>
-                            </div>
-                        </div>
-                        <button id="close-menu-btn" class="text-primary dark:text-on-primary hover:opacity-70 transition-opacity">
-                            <span class="material-symbols-outlined text-2xl">close</span>
-                        </button>
-                    </div>
-                    <!-- Navigation Links -->
-                    <div class="flex flex-col gap-5 text-xl font-body-md">
-                        <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="index.html">Home</a>
-                        <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="work.html">Work</a>
-                        <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="lab.html">Lab</a>
-                        <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="writing.html">Writing</a>
-                        <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="life.html">Life</a>
-                        <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="contact.html">Contact</a>
-                    </div>
-                </div>
-                <!-- Drawer Footer -->
-                <div class="border-t border-warm-slate/10 pt-6">
-                    <a class="w-full text-center font-body-md text-primary dark:text-on-primary border border-primary dark:border-on-primary px-4 py-3 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-colors flex items-center justify-center gap-2" href="contact.html">
-                        Get in touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                    </a>
-                    <div class="flex justify-between items-center mt-6 text-[10px] font-mono-ui text-warm-slate uppercase tracking-widest">
-                        <span>DEHRADUN, INDIA</span>
-                        <span>© 2026</span>
-                    </div>
-                </div>
-            </div>
-            <script>
-                document.getElementById('open-menu-btn').addEventListener('click', () => {
-                    document.getElementById('mobile-menu-drawer').classList.remove('translate-x-full');
-                });
-                document.getElementById('close-menu-btn').addEventListener('click', () => {
-                    document.getElementById('mobile-menu-drawer').classList.add('translate-x-full');
-                });
-            </script>
         </div>
     </nav>
 
@@ -544,6 +501,51 @@
         }
         updateClock();
         setInterval(updateClock, 1000);
+    </script>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-drawer" class="fixed inset-0 z-[100] bg-[#fdf9f2] dark:bg-[#1A1816] flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+        <div class="flex flex-col gap-6">
+            <!-- Drawer Header -->
+            <div class="flex justify-between items-center border-b border-warm-slate/10 pb-4 mb-4">
+                <div class="flex items-center gap-3">
+                    <img alt="Aman Bhardwaj" class="w-8 h-8 rounded-full object-cover" src="aman_bhardwaj_portrait.png" />
+                    <div class="flex items-baseline gap-2">
+                        <span class="font-body-md font-medium text-primary dark:text-on-primary">Aman Bhardwaj</span>
+                    </div>
+                </div>
+                <button id="close-menu-btn" class="text-primary dark:text-on-primary hover:opacity-70 transition-opacity">
+                    <span class="material-symbols-outlined text-2xl">close</span>
+                </button>
+            </div>
+            <!-- Navigation Links -->
+            <div class="flex flex-col gap-5 text-xl font-body-md">
+                <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="index.html">Home</a>
+                <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="work.html">Work</a>
+                <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="lab.html">Lab</a>
+                <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="writing.html">Writing</a>
+                <a class="text-primary dark:text-on-primary border-b border-copper-accent w-fit pb-0.5" href="life.html">Life</a>
+                <a class="text-warm-slate hover:text-primary dark:hover:text-on-primary transition-colors" href="contact.html">Contact</a>
+            </div>
+        </div>
+        <!-- Drawer Footer -->
+        <div class="border-t border-warm-slate/10 pt-6">
+            <a class="w-full text-center font-body-md text-primary dark:text-on-primary border border-primary dark:border-on-primary px-4 py-3 hover:bg-primary hover:text-surface dark:hover:bg-on-primary dark:hover:text-primary transition-colors flex items-center justify-center gap-2" href="contact.html">
+                Get in touch <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+            <div class="flex justify-between items-center mt-6 text-[10px] font-mono-ui text-warm-slate uppercase tracking-widest">
+                <span>DEHRADUN, INDIA</span>
+                <span>© 2026</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('open-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.remove('translate-x-full');
+        });
+        document.getElementById('close-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu-drawer').classList.add('translate-x-full');
+        });
     </script>
 </body>
 
